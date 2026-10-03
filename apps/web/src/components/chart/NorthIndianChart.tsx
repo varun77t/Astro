@@ -5,7 +5,20 @@ import { LagnaLabel, PlanetLabel, type Selection } from "./ChartMarks";
 const LINES = ["M0 0H400V400H0Z", "M0 0L400 400", "M400 0L0 400", "M200 0L400 200L200 400L0 200Z"];
 
 // How wide a house's planet block may grow, as a share of the chart. Side triangles are narrow.
-const BLOCK_WIDTH: Record<number, string> = { 1: "34%", 4: "30%", 7: "34%", 10: "30%", 2: "30%", 6: "30%", 8: "30%", 12: "30%", 3: "15%", 5: "15%", 9: "15%", 11: "15%" };
+const BLOCK_WIDTH: Record<number, string> = {
+  1: "34%",
+  4: "30%",
+  7: "34%",
+  10: "30%",
+  2: "30%",
+  6: "30%",
+  8: "30%",
+  12: "30%",
+  3: "15%",
+  5: "15%",
+  9: "15%",
+  11: "15%",
+};
 
 type Props = {
   kundli: Kundli;

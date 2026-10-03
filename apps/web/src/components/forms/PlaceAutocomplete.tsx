@@ -40,7 +40,9 @@ export function PlaceAutocomplete({ inputId, value, onChange, error }: Props) {
         setActive(places.length ? 0 : -1);
         setOpen(true);
         setStatus("done");
-        setStatusMessage(places.length ? `${places.length} places found.` : "Not found. Try the nearest town; a few kilometres won't change your chart.");
+        setStatusMessage(
+          places.length ? `${places.length} places found.` : "Not found. Try the nearest town; a few kilometres won't change your chart.",
+        );
       } catch (err) {
         if (controller.signal.aborted) return;
         setResults([]);
@@ -166,4 +168,3 @@ export function PlaceAutocomplete({ inputId, value, onChange, error }: Props) {
     </div>
   );
 }
-

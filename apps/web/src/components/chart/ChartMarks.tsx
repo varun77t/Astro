@@ -23,15 +23,7 @@ function describe(mark: ChartMark): string {
 }
 
 /** A graha written into the chart: abbreviation, state letters, and a pen "?" when its sign is in doubt. Degrees live in the table. */
-export function PlanetLabel({
-  mark,
-  selected,
-  onSelect,
-}: {
-  mark: ChartMark;
-  selected: boolean;
-  onSelect: () => void;
-}) {
+export function PlanetLabel({ mark, selected, onSelect }: { mark: ChartMark; selected: boolean; onSelect: () => void }) {
   const tint = (mark.dignity && TINT[mark.dignity]) || "text-ink";
   return (
     <button
@@ -53,21 +45,9 @@ export function PlanetLabel({
 }
 
 /** The Lagna, written in pen like a marker's note. */
-export function LagnaLabel({
-  state,
-  selected,
-  onSelect,
-}: {
-  state: Exclude<LagnaMark, null>;
-  selected: boolean;
-  onSelect: () => void;
-}) {
+export function LagnaLabel({ state, selected, onSelect }: { state: Exclude<LagnaMark, null>; selected: boolean; onSelect: () => void }) {
   const label =
-    state === "sure"
-      ? "Lagna"
-      : state === "likely"
-        ? "Lagna, but a small error in the birth time would move it"
-        : "Possible Lagna";
+    state === "sure" ? "Lagna" : state === "likely" ? "Lagna, but a small error in the birth time would move it" : "Possible Lagna";
   return (
     <button
       type="button"

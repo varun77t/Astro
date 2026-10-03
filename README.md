@@ -25,7 +25,8 @@ docs/      calculation conventions and other decisions
 - [x] Phase 5: rule engine (214 rules, five areas), `POST /api/v1/readings`, "Why this?"
 - [x] Phase 6: LLM narration with provider fallback, cache and validator,
       `POST /api/v1/readings/{area}/narration`; rule-only text when no provider answers
-- [ ] Phase 7: accounts, saved profiles, privacy
+- [x] Phase 7 (in progress): email/password accounts (Supabase), saved charts with
+      consent, "Delete my data", per-user daily AI allowance; see `docs/privacy.md`
 
 ## Backend
 
@@ -70,6 +71,13 @@ python -m app.llm.eval
 Only chart facts (signs, houses, dignities, running dasha) and the matched rules are sent:
 never a name, birth date, time or place. Narrations are cached by a hash of exactly that
 input in `apps/api/.cache/readings.sqlite3`, so a repeat costs nothing.
+
+## Accounts (Supabase)
+
+Sign-in, saved profiles and charts live in Supabase; the schema and row-level security
+policies are in `supabase/migrations/`. The web app reads `NEXT_PUBLIC_SUPABASE_URL` and
+`NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` from `apps/web/.env.local`; the API only needs
+`SUPABASE_URL` (it checks sign-in tokens against the project's public signing keys).
 
 ## Third-party services
 

@@ -11,4 +11,3 @@ describe("formatDegree", () => {
     expect(formatDegree(deg)).toBe(text);
   });
 });
-

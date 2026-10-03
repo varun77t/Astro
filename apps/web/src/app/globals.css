@@ -115,7 +115,9 @@ html {
     color: #fff;
     padding: 0.8rem 1.25rem;
     font-weight: 500;
-    transition: background-color 200ms, transform 120ms;
+    transition:
+      background-color 200ms,
+      transform 120ms;
   }
   .btn:hover {
     background: #333;

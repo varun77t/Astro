@@ -46,6 +46,12 @@ class Settings:
             else [p for p in _list(os.getenv("LLM_PROVIDERS", "")) if p != "none"]
         )
     )
+    # Supabase project, for checking sign-in tokens (no secret needed: public signing keys).
+    supabase_url: str = os.getenv("SUPABASE_URL", "")
+    # Fresh AI-written readings per caller per day (cached ones are free). Signed-in users
+    # get more; past the allowance, readings show the rule texts.
+    narrations_per_day_anonymous: int = int(os.getenv("NARRATIONS_PER_DAY_ANONYMOUS", "10"))
+    narrations_per_day_user: int = int(os.getenv("NARRATIONS_PER_DAY_USER", "40"))
     # Whole narration request, across retries and fallbacks, before rule-only text is shown.
     llm_budget_seconds: float = float(os.getenv("LLM_BUDGET_SECONDS", "25"))
 

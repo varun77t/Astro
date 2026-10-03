@@ -28,16 +28,26 @@ export function PlanetTable({ planets, fromMoon = false }: Props) {
         <caption className="sr-only">Planet positions</caption>
         <thead>
           <tr className="h-[var(--line)] border-b border-rule-strong font-mono text-[0.7rem] tracking-[0.06em] text-muted uppercase">
-            <th scope="col" className="py-0 pr-3 font-medium">Graha</th>
-            <th scope="col" className="py-0 pr-3 font-medium">Sign</th>
-            <th scope="col" className="py-0 pr-3 text-right font-medium">Degree</th>
+            <th scope="col" className="py-0 pr-3 font-medium">
+              Graha
+            </th>
+            <th scope="col" className="py-0 pr-3 font-medium">
+              Sign
+            </th>
+            <th scope="col" className="py-0 pr-3 text-right font-medium">
+              Degree
+            </th>
             <th scope="col" className="py-0 pr-3 text-right font-medium">
               <abbr title={fromMoon ? "House counted from the Moon" : "House counted from the Lagna"} className="no-underline">
                 {fromMoon ? "From Moon" : "House"}
               </abbr>
             </th>
-            <th scope="col" className="hidden py-0 pr-3 font-medium sm:table-cell">Nakshatra</th>
-            <th scope="col" className="py-0 font-medium">Status</th>
+            <th scope="col" className="hidden py-0 pr-3 font-medium sm:table-cell">
+              Nakshatra
+            </th>
+            <th scope="col" className="py-0 font-medium">
+              Status
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -48,10 +58,14 @@ export function PlanetTable({ planets, fromMoon = false }: Props) {
                 <th scope="row" className="py-0 pr-3 font-medium text-ink">
                   {p.name}
                   {p.retrograde && !node && (
-                    <abbr title="Retrograde" className="ml-1.5 font-mono text-[0.7rem] text-blue no-underline">R</abbr>
+                    <abbr title="Retrograde" className="ml-1.5 font-mono text-[0.7rem] text-blue no-underline">
+                      R
+                    </abbr>
                   )}
                   {p.combust && (
-                    <abbr title="Combust (close to the Sun)" className="ml-1 font-mono text-[0.7rem] text-amber no-underline">C</abbr>
+                    <abbr title="Combust (close to the Sun)" className="ml-1 font-mono text-[0.7rem] text-amber no-underline">
+                      C
+                    </abbr>
                   )}
                 </th>
                 <td className="py-0 pr-3">{p.sign}</td>

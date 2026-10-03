@@ -26,7 +26,12 @@ export default function Home() {
           .timeline({ defaults: { ease: EASE_OUT }, delay: 0.15 })
           .from("[data-hero-q]", { autoAlpha: 0, x: -10, duration: 0.8 })
           .from("[data-hero-line]", { y: 22, autoAlpha: 0, duration: 1.1, stagger: 0.08 }, 0.05)
-          .fromTo("[data-chart-line]", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.8, ease: "power2.inOut", stagger: 0.05 }, 0.3)
+          .fromTo(
+            "[data-chart-line]",
+            { strokeDashoffset: 1 },
+            { strokeDashoffset: 0, duration: 0.8, ease: "power2.inOut", stagger: 0.05 },
+            0.3,
+          )
           .fromTo("[data-chart-pen]", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, ">-0.2")
           .from("[data-chart-item]", { autoAlpha: 0, y: 4, duration: 0.6, stagger: 0.03 }, "<")
           .fromTo("[data-write]", WRITE_FROM, { ...WRITE_TO, duration: 0.85, ease: "power2.inOut", clearProps: "clipPath" }, ">-0.1")
@@ -39,7 +44,12 @@ export default function Home() {
             .timeline({ scrollTrigger: { trigger: answer, start: "top 80%", end: "bottom 62%", scrub: 0.6 } })
             .fromTo(answer.querySelectorAll("[data-scroll-write]"), WRITE_FROM, { ...WRITE_TO, ease: "none", stagger: 0.45 })
             .fromTo(answer.querySelectorAll("[data-strike]"), { scaleX: 0 }, { scaleX: 1, ease: "none", stagger: 0.2 }, "<0.2")
-            .fromTo(answer.querySelectorAll("[data-scroll-tick] path"), { strokeDashoffset: 1 }, { strokeDashoffset: 0, ease: "none", stagger: 0.25 }, "<");
+            .fromTo(
+              answer.querySelectorAll("[data-scroll-tick] path"),
+              { strokeDashoffset: 1 },
+              { strokeDashoffset: 0, ease: "none", stagger: 0.25 },
+              "<",
+            );
         });
 
         ScrollTrigger.batch("[data-reveal]", {
@@ -80,7 +90,10 @@ export default function Home() {
             </div>
           </div>
 
-          <figure className="w-full max-w-[28rem] lg:justify-self-end" aria-label="A sample chart, with Venus exalted in the 1st house circled">
+          <figure
+            className="w-full max-w-[28rem] lg:justify-self-end"
+            aria-label="A sample chart, with Venus exalted in the 1st house circled"
+          >
             <div inert>
               <SouthIndianChart kundli={SAMPLE} selection={{ kind: "planet", name: "Venus" }} onSelect={noop} />
             </div>
@@ -95,7 +108,11 @@ export default function Home() {
           </figure>
         </section>
 
-        <Question n="Q2." title="Don't know your birth time?" prose="That's fine. We say what can't be known, and read from your Moon sign.">
+        <Question
+          n="Q2."
+          title="Don't know your birth time?"
+          prose="That's fine. We say what can't be known, and read from your Moon sign."
+        >
           <div data-answer style={{ lineHeight: "var(--line)" }}>
             <AnswerRow label="Exact time">
               <Term en="Lagna" deva="लग्न" />
@@ -110,14 +127,16 @@ export default function Home() {
 
         <Question n="Q3." title="Is the maths right?">
           <ul data-answer style={{ lineHeight: "var(--line)" }}>
-            {["The astronomy serious Jyotish software uses", "Checked against reference charts", "Open source, so anyone can check"].map((line) => (
-              <li key={line} className="flex items-start gap-2">
-                <Tick data-scroll-tick="" className="mt-1.5" />
-                <span data-scroll-write className="text-ink">
-                  {line}
-                </span>
-              </li>
-            ))}
+            {["The astronomy serious Jyotish software uses", "Checked against reference charts", "Open source, so anyone can check"].map(
+              (line) => (
+                <li key={line} className="flex items-start gap-2">
+                  <Tick data-scroll-tick="" className="mt-1.5" />
+                  <span data-scroll-write className="text-ink">
+                    {line}
+                  </span>
+                </li>
+              ),
+            )}
           </ul>
         </Question>
 

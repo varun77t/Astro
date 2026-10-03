@@ -6,6 +6,7 @@ export function ChoiceTabs<T extends string>({
   options,
   onChange,
   vertical = false,
+  hideLegend = false,
 }: {
   legend: string;
   name: string;
@@ -14,10 +15,14 @@ export function ChoiceTabs<T extends string>({
   onChange: (value: T) => void;
   /** A stacked list, e.g. in a side column, instead of a row. */
   vertical?: boolean;
+  /** Keep the legend for screen readers only, when the options speak for themselves. */
+  hideLegend?: boolean;
 }) {
   return (
     <fieldset className={vertical ? "flex flex-col items-start" : "flex flex-wrap items-baseline gap-x-5 gap-y-1"}>
-      <legend className={vertical ? "mb-1 text-sm text-muted" : "float-left mr-1 text-sm text-muted"}>{legend}</legend>
+      <legend className={hideLegend ? "sr-only" : vertical ? "mb-1 text-sm text-muted" : "float-left mr-1 text-sm text-muted"}>
+        {legend}
+      </legend>
       {options.map((o) => (
         <label key={o.value} className="relative cursor-pointer leading-[var(--line)]">
           <input

@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.v1 import birth, chart, dasha, geocode, glossary, readings
 from app.core.config import settings
+from app.core.quota import DailyQuota
 from app.engine.constants import ENGINE_VERSION
 from app.geo.cache import GeocodeCache
 from app.geo.geocoder import Geocoder
@@ -40,6 +41,7 @@ async def lifespan(app: FastAPI):
             settings.nominatim_url,
         )
         app.state.narrator = build_narrator()
+        app.state.narration_quota = DailyQuota()
         yield
 
 
@@ -48,7 +50,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins,
     allow_methods=["GET", "POST"],
-    allow_headers=["Content-Type"],
+    allow_headers=["Content-Type", "Authorization"],
 )
 app.include_router(chart.router, prefix="/api/v1", tags=["chart"])
 app.include_router(birth.router, prefix="/api/v1", tags=["birth"])

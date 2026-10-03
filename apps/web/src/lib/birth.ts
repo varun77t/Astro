@@ -25,21 +25,16 @@ export const emptyBirthForm: BirthFormState = {
 export function validateBirthForm(form: BirthFormState, today: string): BirthFormErrors {
   const errors: BirthFormErrors = {};
   if (!form.date) errors.date = "Enter the date of birth.";
-  else if (form.date < MIN_DATE || form.date > MAX_DATE)
-    errors.date = "Birth year must be between 1800 and 2100.";
+  else if (form.date < MIN_DATE || form.date > MAX_DATE) errors.date = "Birth year must be between 1800 and 2100.";
   else if (form.date > today) errors.date = "The date of birth can't be in the future.";
 
-  if (form.timeAccuracy !== "unknown" && !form.time)
-    errors.time = "Enter the time of birth, or choose “I don't know”.";
+  if (form.timeAccuracy !== "unknown" && !form.time) errors.time = "Enter the time of birth, or choose “I don't know”.";
 
   if (!form.place) errors.place = "Choose the place of birth from the list.";
   return errors;
 }
 
-export function toBirthInput(
-  form: BirthFormState,
-  extras: { fold?: 0 | 1 | null; utcOffsetMinutes?: number | null } = {},
-): BirthInput {
+export function toBirthInput(form: BirthFormState, extras: { fold?: 0 | 1 | null; utcOffsetMinutes?: number | null } = {}): BirthInput {
   if (!form.place) throw new Error("place is required");
   return {
     date: form.date,

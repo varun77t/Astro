@@ -101,7 +101,12 @@ export function ChartFigure({ chart, intro, aside, below }: Props) {
           .timeline()
           .fromTo("[data-chart-line]", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.7, ease: "power2.inOut", stagger: 0.05 })
           .fromTo("[data-chart-pen]", { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.35, ease: "power2.out" }, "-=0.2")
-          .fromTo("[data-chart-item]", { autoAlpha: 0, y: 4 }, { autoAlpha: 1, y: 0, duration: 0.6, ease: EASE_OUT, stagger: 0.025 }, "-=0.35");
+          .fromTo(
+            "[data-chart-item]",
+            { autoAlpha: 0, y: 4 },
+            { autoAlpha: 1, y: 0, duration: 0.6, ease: EASE_OUT, stagger: 0.025 },
+            "-=0.35",
+          );
       });
       return () => mm.revert();
     },
@@ -172,7 +177,14 @@ export function ChartFigure({ chart, intro, aside, below }: Props) {
       </div>
 
       <div ref={explainRef} aria-live="polite" className="lg:col-start-1 lg:row-start-3">
-        <Explain chart={chart} kundli={kundli} selection={shown} glossary={glossary} glossaryFailed={glossaryFailed} onRetry={retryGlossary} />
+        <Explain
+          chart={chart}
+          kundli={kundli}
+          selection={shown}
+          glossary={glossary}
+          glossaryFailed={glossaryFailed}
+          onRetry={retryGlossary}
+        />
       </div>
 
       <div className="lg:col-start-1 lg:row-start-2">{aside}</div>

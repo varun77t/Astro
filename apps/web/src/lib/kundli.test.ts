@@ -4,8 +4,7 @@ import { describe, expect, it } from "vitest";
 import { buildKundli, cellInHouse, houseOf, ordinal, SIGNS, SOUTH_GRID } from "./kundli";
 import type { Chart } from "./types";
 
-const fixture = (name: string): Chart =>
-  JSON.parse(readFileSync(resolve(__dirname, "__fixtures__", `${name}.json`), "utf8"));
+const fixture = (name: string): Chart => JSON.parse(readFileSync(resolve(__dirname, "__fixtures__", `${name}.json`), "utf8"));
 
 const golden = (name: string) =>
   JSON.parse(readFileSync(resolve(__dirname, "../../../../data/golden_charts", `${name}.json`), "utf8")) as {
@@ -13,8 +12,7 @@ const golden = (name: string) =>
   };
 
 const exact = fixture("bengaluru-1990-exact");
-const placementOf = (k: ReturnType<typeof buildKundli>, planet: string) =>
-  k.cells.find((c) => c.planets.some((p) => p.name === planet))!;
+const placementOf = (k: ReturnType<typeof buildKundli>, planet: string) => k.cells.find((c) => c.planets.some((p) => p.name === planet))!;
 
 describe("D1 against the reference software (bengaluru-1990)", () => {
   const k = buildKundli(exact, "D1");

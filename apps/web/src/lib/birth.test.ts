@@ -1,11 +1,5 @@
 import { describe, expect, it } from "vitest";
-import {
-  type BirthFormState,
-  emptyBirthForm,
-  formatWallClock,
-  toBirthInput,
-  validateBirthForm,
-} from "./birth";
+import { type BirthFormState, emptyBirthForm, formatWallClock, toBirthInput, validateBirthForm } from "./birth";
 import type { Place } from "./types";
 
 const mysuru: Place = {

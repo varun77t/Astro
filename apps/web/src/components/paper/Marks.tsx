@@ -4,8 +4,24 @@ type MarkProps = { className?: string; "data-mark"?: string };
 
 export function Tick({ className = "", ...rest }: MarkProps) {
   return (
-    <svg width="22" height="18" viewBox="0 0 22 18" aria-hidden fill="none" className={`inline-block shrink-0 align-[-0.2em] ${className}`} {...rest}>
-      <path d="M2 10 L8 15 L20 3" stroke="var(--pen)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" pathLength={1} strokeDasharray={1} />
+    <svg
+      width="22"
+      height="18"
+      viewBox="0 0 22 18"
+      aria-hidden
+      fill="none"
+      className={`inline-block shrink-0 align-[-0.2em] ${className}`}
+      {...rest}
+    >
+      <path
+        d="M2 10 L8 15 L20 3"
+        stroke="var(--pen)"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        pathLength={1}
+        strokeDasharray={1}
+      />
     </svg>
   );
 }
@@ -29,7 +45,10 @@ export function Arrow() {
 /** The question number written in the margin. Sits to the left of its column. */
 export function MarginLabel({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   return (
-    <span aria-hidden className={`pen absolute -left-11 w-7 text-base leading-none sm:-left-20 sm:w-16 sm:text-right sm:text-xl ${className}`}>
+    <span
+      aria-hidden
+      className={`pen absolute -left-11 w-7 text-base leading-none sm:-left-20 sm:w-16 sm:text-right sm:text-xl ${className}`}
+    >
       {children}
     </span>
   );

@@ -21,7 +21,11 @@ export function explain(chart: Chart, k: Kundli, s: Exclude<Selection, null>): E
     const mark = cell.planets.find((m) => m.name === s.name)!;
     const rows: Row[] = [];
     if (d9) rows.push({ id: "concept.navamsa" });
-    rows.push({ id: `planet.${p.name.toLowerCase()}`, full: true }, { id: `sign.${cell.sign.toLowerCase()}` }, { id: `house.${cell.house}` });
+    rows.push(
+      { id: `planet.${p.name.toLowerCase()}`, full: true },
+      { id: `sign.${cell.sign.toLowerCase()}` },
+      { id: `house.${cell.house}` },
+    );
     if (!d9 && p.dignity) rows.push({ id: `dignity.${p.dignity}` });
     if (!d9 && p.retrograde && !NODES.has(p.name)) rows.push({ id: "state.retrograde" });
     if (!d9 && p.combust) rows.push({ id: "state.combust" });
@@ -34,7 +38,9 @@ export function explain(chart: Chart, k: Kundli, s: Exclude<Selection, null>): E
       });
     }
     return {
-      title: d9 ? `${p.name} in ${cell.sign} navamsa, ${ordinal(cell.house)} house${fromMoon}` : `${p.name} in ${cell.sign}, ${ordinal(cell.house)} house${fromMoon}`,
+      title: d9
+        ? `${p.name} in ${cell.sign} navamsa, ${ordinal(cell.house)} house${fromMoon}`
+        : `${p.name} in ${cell.sign}, ${ordinal(cell.house)} house${fromMoon}`,
       facts: d9 ? null : `${p.nakshatra} nakshatra${p.dignity && STRONG.has(p.dignity) ? ` · ${p.dignity}` : ""}`,
       rows,
     };
@@ -60,7 +66,8 @@ export function explain(chart: Chart, k: Kundli, s: Exclude<Selection, null>): E
   const lordCell = k.cells.find((c) => c.planets.some((m) => m.name === lord))!;
   const rows: Row[] = [{ id: `house.${cell.house}`, full: true }, { id: `sign.${cell.sign.toLowerCase()}` }];
   if (k.basis === "moon") rows.push({ id: "concept.chandra_lagna" });
-  if (cell.lagna === "possible") rows.push({ id: "concept.lagna", note: "Your Lagna may be in this sign; the birth time can't settle which." });
+  if (cell.lagna === "possible")
+    rows.push({ id: "concept.lagna", note: "Your Lagna may be in this sign; the birth time can't settle which." });
   const holds = cell.planets.map((m) => m.name).join(", ");
   return {
     title: `${ordinal(cell.house)} house${fromMoon}: ${cell.sign}`,
@@ -81,9 +88,7 @@ type Props = {
 /** The marker's explanation of whatever was tapped, one ruled line per term. */
 export function Explain({ chart, kundli, selection, glossary, glossaryFailed, onRetry }: Props) {
   if (!selection) {
-    return (
-      <p className="pen text-lg leading-[var(--line)] text-pen">Tap a planet or a house.</p>
-    );
+    return <p className="pen text-lg leading-[var(--line)] text-pen">Tap a planet or a house.</p>;
   }
 
   const { title, facts, rows } = explain(chart, kundli, selection);

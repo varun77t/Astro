@@ -76,7 +76,10 @@ class Narrator:
         area: Area,
         as_of: datetime | None = None,
         language: Language = "en",
+        *,
+        allow_llm: bool = True,
     ) -> Narration:
+        """`allow_llm=False` still serves a cached narration but never calls a provider."""
         readings, facts = compute_readings_with_facts(birth, as_of, areas=(area,))
         reading = readings.readings[0]
         version = readings.rules_version
@@ -92,6 +95,10 @@ class Narrator:
                 out, reading, language, version, provider=provider, model=model, cached=True
             )
 
+        if not allow_llm:
+            return rules_narration(reading, language, version).model_copy(
+                update={"limit_reached": True}
+            )
         if self.router is None or not self.router.available:
             return rules_narration(reading, language, version)
         result = self.router.generate(

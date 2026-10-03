@@ -1,360 +1,334 @@
 {
- "meta": {
-  "ayanamsa": "lahiri",
-  "ayanamsa_value": 23.725896390858107,
-  "house_system": "whole_sign",
-  "node_type": "mean",
-  "ephemeris": "moshier",
-  "engine_version": "0.1.0",
-  "utc": "1990-05-17T09:05:00Z",
-  "local_time": "1990-05-17T14:35:00+05:30",
-  "tz_name": "Asia/Kolkata",
-  "utc_offset": "+05:30",
-  "offset_overridden": false,
-  "jd_ut": 2448028.878472222
- },
- "reliability": {
-  "time_accuracy": "exact",
-  "window_minutes": 5,
-  "ascendant_signs": [
-   "Virgo"
-  ],
-  "moon_signs": [
-   "Capricorn"
-  ],
-  "moon_nakshatras": [
-   "Dhanishta"
-  ],
-  "ascendant_reliable": true,
-  "moon_sign_reliable": true,
-  "moon_nakshatra_reliable": true,
-  "navamsa_ascendant_signs": [
-   "Aquarius"
-  ],
-  "navamsa_moon_signs": [
-   "Virgo"
-  ],
-  "navamsa_ascendant_reliable": true,
-  "navamsa_moon_reliable": true,
-  "basis": "ascendant",
-  "warnings": []
- },
- "ascendant": {
-  "longitude": 154.92738577308995,
-  "sign": "Virgo",
-  "sign_lord": "Mercury",
-  "degree_in_sign": 4.927385773089952,
-  "nakshatra": "Uttara Phalguni",
-  "nakshatra_lord": "Sun",
-  "pada": 3
- },
- "planets": [
-  {
-   "name": "Sun",
-   "longitude": 32.48087205030366,
-   "latitude": 0.00005266275924028391,
-   "speed": 0.9635428543007081,
-   "sign": "Taurus",
-   "sign_lord": "Venus",
-   "degree_in_sign": 2.4808720503036596,
-   "house": 9,
-   "house_from_moon": 5,
-   "nakshatra": "Krittika",
-   "nakshatra_lord": "Sun",
-   "pada": 2,
-   "retrograde": false,
-   "combust": false,
-   "dignity": "enemy"
+  "meta": {
+    "ayanamsa": "lahiri",
+    "ayanamsa_value": 23.725896390858107,
+    "house_system": "whole_sign",
+    "node_type": "mean",
+    "ephemeris": "moshier",
+    "engine_version": "0.1.0",
+    "utc": "1990-05-17T09:05:00Z",
+    "local_time": "1990-05-17T14:35:00+05:30",
+    "tz_name": "Asia/Kolkata",
+    "utc_offset": "+05:30",
+    "offset_overridden": false,
+    "jd_ut": 2448028.878472222
   },
-  {
-   "name": "Moon",
-   "longitude": 297.13173998433916,
-   "latitude": 0.9333816475899561,
-   "speed": 12.917094516391172,
-   "sign": "Capricorn",
-   "sign_lord": "Saturn",
-   "degree_in_sign": 27.131739984339163,
-   "house": 5,
-   "house_from_moon": 1,
-   "nakshatra": "Dhanishta",
-   "nakshatra_lord": "Mars",
-   "pada": 2,
-   "retrograde": false,
-   "combust": false,
-   "dignity": "neutral"
+  "reliability": {
+    "time_accuracy": "exact",
+    "window_minutes": 5,
+    "ascendant_signs": ["Virgo"],
+    "moon_signs": ["Capricorn"],
+    "moon_nakshatras": ["Dhanishta"],
+    "ascendant_reliable": true,
+    "moon_sign_reliable": true,
+    "moon_nakshatra_reliable": true,
+    "navamsa_ascendant_signs": ["Aquarius"],
+    "navamsa_moon_signs": ["Virgo"],
+    "navamsa_ascendant_reliable": true,
+    "navamsa_moon_reliable": true,
+    "basis": "ascendant",
+    "warnings": []
   },
-  {
-   "name": "Mars",
-   "longitude": 326.0023999598234,
-   "latitude": -1.7493671147735643,
-   "speed": 0.7418888446460417,
-   "sign": "Aquarius",
-   "sign_lord": "Saturn",
-   "degree_in_sign": 26.00239995982338,
-   "house": 6,
-   "house_from_moon": 2,
-   "nakshatra": "Purva Bhadrapada",
-   "nakshatra_lord": "Jupiter",
-   "pada": 2,
-   "retrograde": false,
-   "combust": false,
-   "dignity": "neutral"
+  "ascendant": {
+    "longitude": 154.92738577308995,
+    "sign": "Virgo",
+    "sign_lord": "Mercury",
+    "degree_in_sign": 4.927385773089952,
+    "nakshatra": "Uttara Phalguni",
+    "nakshatra_lord": "Sun",
+    "pada": 3
   },
-  {
-   "name": "Mercury",
-   "longitude": 14.194249576768758,
-   "latitude": -2.8527209254168895,
-   "speed": 0.022433994007088027,
-   "sign": "Aries",
-   "sign_lord": "Mars",
-   "degree_in_sign": 14.194249576768758,
-   "house": 8,
-   "house_from_moon": 4,
-   "nakshatra": "Bharani",
-   "nakshatra_lord": "Venus",
-   "pada": 1,
-   "retrograde": false,
-   "combust": false,
-   "dignity": "neutral"
-  },
-  {
-   "name": "Jupiter",
-   "longitude": 76.17335494991126,
-   "latitude": 0.14526182766249818,
-   "speed": 0.19144881484714898,
-   "sign": "Gemini",
-   "sign_lord": "Mercury",
-   "degree_in_sign": 16.173354949911257,
-   "house": 10,
-   "house_from_moon": 6,
-   "nakshatra": "Ardra",
-   "nakshatra_lord": "Rahu",
-   "pada": 3,
-   "retrograde": false,
-   "combust": false,
-   "dignity": "enemy"
-  },
-  {
-   "name": "Venus",
-   "longitude": 351.2378994808552,
-   "latitude": -1.8507544496277077,
-   "speed": 1.1435758957452404,
-   "sign": "Pisces",
-   "sign_lord": "Jupiter",
-   "degree_in_sign": 21.23789948085522,
-   "house": 7,
-   "house_from_moon": 3,
-   "nakshatra": "Revati",
-   "nakshatra_lord": "Mercury",
-   "pada": 2,
-   "retrograde": false,
-   "combust": false,
-   "dignity": "exalted"
-  },
-  {
-   "name": "Saturn",
-   "longitude": 271.48899979351364,
-   "latitude": 0.15292726310006827,
-   "speed": -0.01991330160377379,
-   "sign": "Capricorn",
-   "sign_lord": "Saturn",
-   "degree_in_sign": 1.488999793513642,
-   "house": 5,
-   "house_from_moon": 1,
-   "nakshatra": "Uttara Ashadha",
-   "nakshatra_lord": "Sun",
-   "pada": 2,
-   "retrograde": true,
-   "combust": false,
-   "dignity": "own"
-  },
-  {
-   "name": "Rahu",
-   "longitude": 287.51379488935044,
-   "latitude": 0.0,
-   "speed": -0.052992030450603744,
-   "sign": "Capricorn",
-   "sign_lord": "Saturn",
-   "degree_in_sign": 17.513794889350436,
-   "house": 5,
-   "house_from_moon": 1,
-   "nakshatra": "Shravana",
-   "nakshatra_lord": "Moon",
-   "pada": 3,
-   "retrograde": true,
-   "combust": false,
-   "dignity": null
-  },
-  {
-   "name": "Ketu",
-   "longitude": 107.51379488935044,
-   "latitude": -0.0,
-   "speed": -0.052992030450603744,
-   "sign": "Cancer",
-   "sign_lord": "Moon",
-   "degree_in_sign": 17.513794889350436,
-   "house": 11,
-   "house_from_moon": 7,
-   "nakshatra": "Ashlesha",
-   "nakshatra_lord": "Mercury",
-   "pada": 1,
-   "retrograde": true,
-   "combust": false,
-   "dignity": null
-  }
- ],
- "houses": [
-  {
-   "house": 1,
-   "sign": "Virgo",
-   "lord": "Mercury",
-   "lord_house": 8,
-   "occupants": []
-  },
-  {
-   "house": 2,
-   "sign": "Libra",
-   "lord": "Venus",
-   "lord_house": 7,
-   "occupants": []
-  },
-  {
-   "house": 3,
-   "sign": "Scorpio",
-   "lord": "Mars",
-   "lord_house": 6,
-   "occupants": []
-  },
-  {
-   "house": 4,
-   "sign": "Sagittarius",
-   "lord": "Jupiter",
-   "lord_house": 10,
-   "occupants": []
-  },
-  {
-   "house": 5,
-   "sign": "Capricorn",
-   "lord": "Saturn",
-   "lord_house": 5,
-   "occupants": [
-    "Moon",
-    "Saturn",
-    "Rahu"
-   ]
-  },
-  {
-   "house": 6,
-   "sign": "Aquarius",
-   "lord": "Saturn",
-   "lord_house": 5,
-   "occupants": [
-    "Mars"
-   ]
-  },
-  {
-   "house": 7,
-   "sign": "Pisces",
-   "lord": "Jupiter",
-   "lord_house": 10,
-   "occupants": [
-    "Venus"
-   ]
-  },
-  {
-   "house": 8,
-   "sign": "Aries",
-   "lord": "Mars",
-   "lord_house": 6,
-   "occupants": [
-    "Mercury"
-   ]
-  },
-  {
-   "house": 9,
-   "sign": "Taurus",
-   "lord": "Venus",
-   "lord_house": 7,
-   "occupants": [
-    "Sun"
-   ]
-  },
-  {
-   "house": 10,
-   "sign": "Gemini",
-   "lord": "Mercury",
-   "lord_house": 8,
-   "occupants": [
-    "Jupiter"
-   ]
-  },
-  {
-   "house": 11,
-   "sign": "Cancer",
-   "lord": "Moon",
-   "lord_house": 5,
-   "occupants": [
-    "Ketu"
-   ]
-  },
-  {
-   "house": 12,
-   "sign": "Leo",
-   "lord": "Sun",
-   "lord_house": 9,
-   "occupants": []
-  }
- ],
- "divisional": {
-  "D9": {
-   "ascendant_sign": "Aquarius",
-   "planets": [
+  "planets": [
     {
-     "name": "Sun",
-     "sign": "Capricorn",
-     "house": 12
+      "name": "Sun",
+      "longitude": 32.48087205030366,
+      "latitude": 0.00005266275924028391,
+      "speed": 0.9635428543007081,
+      "sign": "Taurus",
+      "sign_lord": "Venus",
+      "degree_in_sign": 2.4808720503036596,
+      "house": 9,
+      "house_from_moon": 5,
+      "nakshatra": "Krittika",
+      "nakshatra_lord": "Sun",
+      "pada": 2,
+      "retrograde": false,
+      "combust": false,
+      "dignity": "enemy"
     },
     {
-     "name": "Moon",
-     "sign": "Virgo",
-     "house": 8
+      "name": "Moon",
+      "longitude": 297.13173998433916,
+      "latitude": 0.9333816475899561,
+      "speed": 12.917094516391172,
+      "sign": "Capricorn",
+      "sign_lord": "Saturn",
+      "degree_in_sign": 27.131739984339163,
+      "house": 5,
+      "house_from_moon": 1,
+      "nakshatra": "Dhanishta",
+      "nakshatra_lord": "Mars",
+      "pada": 2,
+      "retrograde": false,
+      "combust": false,
+      "dignity": "neutral"
     },
     {
-     "name": "Mars",
-     "sign": "Taurus",
-     "house": 4
+      "name": "Mars",
+      "longitude": 326.0023999598234,
+      "latitude": -1.7493671147735643,
+      "speed": 0.7418888446460417,
+      "sign": "Aquarius",
+      "sign_lord": "Saturn",
+      "degree_in_sign": 26.00239995982338,
+      "house": 6,
+      "house_from_moon": 2,
+      "nakshatra": "Purva Bhadrapada",
+      "nakshatra_lord": "Jupiter",
+      "pada": 2,
+      "retrograde": false,
+      "combust": false,
+      "dignity": "neutral"
     },
     {
-     "name": "Mercury",
-     "sign": "Leo",
-     "house": 7
+      "name": "Mercury",
+      "longitude": 14.194249576768758,
+      "latitude": -2.8527209254168895,
+      "speed": 0.022433994007088027,
+      "sign": "Aries",
+      "sign_lord": "Mars",
+      "degree_in_sign": 14.194249576768758,
+      "house": 8,
+      "house_from_moon": 4,
+      "nakshatra": "Bharani",
+      "nakshatra_lord": "Venus",
+      "pada": 1,
+      "retrograde": false,
+      "combust": false,
+      "dignity": "neutral"
     },
     {
-     "name": "Jupiter",
-     "sign": "Aquarius",
-     "house": 1
+      "name": "Jupiter",
+      "longitude": 76.17335494991126,
+      "latitude": 0.14526182766249818,
+      "speed": 0.19144881484714898,
+      "sign": "Gemini",
+      "sign_lord": "Mercury",
+      "degree_in_sign": 16.173354949911257,
+      "house": 10,
+      "house_from_moon": 6,
+      "nakshatra": "Ardra",
+      "nakshatra_lord": "Rahu",
+      "pada": 3,
+      "retrograde": false,
+      "combust": false,
+      "dignity": "enemy"
     },
     {
-     "name": "Venus",
-     "sign": "Capricorn",
-     "house": 12
+      "name": "Venus",
+      "longitude": 351.2378994808552,
+      "latitude": -1.8507544496277077,
+      "speed": 1.1435758957452404,
+      "sign": "Pisces",
+      "sign_lord": "Jupiter",
+      "degree_in_sign": 21.23789948085522,
+      "house": 7,
+      "house_from_moon": 3,
+      "nakshatra": "Revati",
+      "nakshatra_lord": "Mercury",
+      "pada": 2,
+      "retrograde": false,
+      "combust": false,
+      "dignity": "exalted"
     },
     {
-     "name": "Saturn",
-     "sign": "Capricorn",
-     "house": 12
+      "name": "Saturn",
+      "longitude": 271.48899979351364,
+      "latitude": 0.15292726310006827,
+      "speed": -0.01991330160377379,
+      "sign": "Capricorn",
+      "sign_lord": "Saturn",
+      "degree_in_sign": 1.488999793513642,
+      "house": 5,
+      "house_from_moon": 1,
+      "nakshatra": "Uttara Ashadha",
+      "nakshatra_lord": "Sun",
+      "pada": 2,
+      "retrograde": true,
+      "combust": false,
+      "dignity": "own"
     },
     {
-     "name": "Rahu",
-     "sign": "Gemini",
-     "house": 5
+      "name": "Rahu",
+      "longitude": 287.51379488935044,
+      "latitude": 0.0,
+      "speed": -0.052992030450603744,
+      "sign": "Capricorn",
+      "sign_lord": "Saturn",
+      "degree_in_sign": 17.513794889350436,
+      "house": 5,
+      "house_from_moon": 1,
+      "nakshatra": "Shravana",
+      "nakshatra_lord": "Moon",
+      "pada": 3,
+      "retrograde": true,
+      "combust": false,
+      "dignity": null
     },
     {
-     "name": "Ketu",
-     "sign": "Sagittarius",
-     "house": 11
+      "name": "Ketu",
+      "longitude": 107.51379488935044,
+      "latitude": -0.0,
+      "speed": -0.052992030450603744,
+      "sign": "Cancer",
+      "sign_lord": "Moon",
+      "degree_in_sign": 17.513794889350436,
+      "house": 11,
+      "house_from_moon": 7,
+      "nakshatra": "Ashlesha",
+      "nakshatra_lord": "Mercury",
+      "pada": 1,
+      "retrograde": true,
+      "combust": false,
+      "dignity": null
     }
-   ]
+  ],
+  "houses": [
+    {
+      "house": 1,
+      "sign": "Virgo",
+      "lord": "Mercury",
+      "lord_house": 8,
+      "occupants": []
+    },
+    {
+      "house": 2,
+      "sign": "Libra",
+      "lord": "Venus",
+      "lord_house": 7,
+      "occupants": []
+    },
+    {
+      "house": 3,
+      "sign": "Scorpio",
+      "lord": "Mars",
+      "lord_house": 6,
+      "occupants": []
+    },
+    {
+      "house": 4,
+      "sign": "Sagittarius",
+      "lord": "Jupiter",
+      "lord_house": 10,
+      "occupants": []
+    },
+    {
+      "house": 5,
+      "sign": "Capricorn",
+      "lord": "Saturn",
+      "lord_house": 5,
+      "occupants": ["Moon", "Saturn", "Rahu"]
+    },
+    {
+      "house": 6,
+      "sign": "Aquarius",
+      "lord": "Saturn",
+      "lord_house": 5,
+      "occupants": ["Mars"]
+    },
+    {
+      "house": 7,
+      "sign": "Pisces",
+      "lord": "Jupiter",
+      "lord_house": 10,
+      "occupants": ["Venus"]
+    },
+    {
+      "house": 8,
+      "sign": "Aries",
+      "lord": "Mars",
+      "lord_house": 6,
+      "occupants": ["Mercury"]
+    },
+    {
+      "house": 9,
+      "sign": "Taurus",
+      "lord": "Venus",
+      "lord_house": 7,
+      "occupants": ["Sun"]
+    },
+    {
+      "house": 10,
+      "sign": "Gemini",
+      "lord": "Mercury",
+      "lord_house": 8,
+      "occupants": ["Jupiter"]
+    },
+    {
+      "house": 11,
+      "sign": "Cancer",
+      "lord": "Moon",
+      "lord_house": 5,
+      "occupants": ["Ketu"]
+    },
+    {
+      "house": 12,
+      "sign": "Leo",
+      "lord": "Sun",
+      "lord_house": 9,
+      "occupants": []
+    }
+  ],
+  "divisional": {
+    "D9": {
+      "ascendant_sign": "Aquarius",
+      "planets": [
+        {
+          "name": "Sun",
+          "sign": "Capricorn",
+          "house": 12
+        },
+        {
+          "name": "Moon",
+          "sign": "Virgo",
+          "house": 8
+        },
+        {
+          "name": "Mars",
+          "sign": "Taurus",
+          "house": 4
+        },
+        {
+          "name": "Mercury",
+          "sign": "Leo",
+          "house": 7
+        },
+        {
+          "name": "Jupiter",
+          "sign": "Aquarius",
+          "house": 1
+        },
+        {
+          "name": "Venus",
+          "sign": "Capricorn",
+          "house": 12
+        },
+        {
+          "name": "Saturn",
+          "sign": "Capricorn",
+          "house": 12
+        },
+        {
+          "name": "Rahu",
+          "sign": "Gemini",
+          "house": 5
+        },
+        {
+          "name": "Ketu",
+          "sign": "Sagittarius",
+          "house": 11
+        }
+      ]
+    }
   }
- }
 }

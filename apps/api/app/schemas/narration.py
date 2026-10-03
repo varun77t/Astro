@@ -40,3 +40,4 @@ class Narration(BaseModel):
     current_period: list[NarratedPoint]
     reading: Reading  # the rule reading underneath, for "Why this?"
     rules_version: str
+    limit_reached: bool = False  # rule texts because today's AI allowance is used up

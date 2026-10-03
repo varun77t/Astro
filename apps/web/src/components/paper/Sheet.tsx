@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AccountLink } from "@/components/account/AccountLink";
 
 /** Shared horizontal frame: content sits right of the margin rule at every width. */
 export const SHEET_X = "mx-auto w-full max-w-6xl pr-4 pl-12 sm:pr-6 sm:pl-24";
@@ -19,7 +20,10 @@ export function Sheet({ children, action }: Props) {
           <Link href="/" className="font-semibold tracking-tight text-ink">
             Vedic Astro
           </Link>
-          {action}
+          <div className="flex items-center gap-6">
+            <AccountLink />
+            {action}
+          </div>
         </div>
       </header>
 

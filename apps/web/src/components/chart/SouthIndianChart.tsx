@@ -40,7 +40,7 @@ export function SouthIndianChart({ kundli, selection, onSelect }: Props) {
             fill="none"
             stroke="var(--ink-2)"
             strokeWidth={1.25}
-           
+
             strokeLinecap="square"
             pathLength={1}
             strokeDasharray={1}
@@ -62,13 +62,7 @@ export function SouthIndianChart({ kundli, selection, onSelect }: Props) {
             <Term en={name.en} deva={name.deva} />
           </p>
           <p className="text-[0.8em] leading-snug text-muted">
-            {kundli.basis === "lagna" ? (
-              <>
-                Lagna {kundli.firstSign}
-              </>
-            ) : (
-              <>Counted from the Moon</>
-            )}
+            {kundli.basis === "lagna" ? <>Lagna {kundli.firstSign}</> : <>Counted from the Moon</>}
           </p>
         </div>
       </div>
@@ -83,7 +77,12 @@ function SouthCell({ cell, selection, onSelect }: { cell: ChartCell; selection: 
   const occupants = cell.planets.map((p) => p.name).join(", ") || "empty";
 
   return (
-    <div role="group" aria-label={`${cell.sign}, ${ordinal(cell.house)} house: ${occupants}`} className="relative" style={{ gridRow: row + 1, gridColumn: col + 1 }}>
+    <div
+      role="group"
+      aria-label={`${cell.sign}, ${ordinal(cell.house)} house: ${occupants}`}
+      className="relative"
+      style={{ gridRow: row + 1, gridColumn: col + 1 }}
+    >
       <button
         type="button"
         aria-pressed={houseSelected}
@@ -93,9 +92,22 @@ function SouthCell({ cell, selection, onSelect }: { cell: ChartCell; selection: 
       />
 
       {showLagnaHere && (
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden className="pointer-events-none absolute inset-0 h-full w-full overflow-visible">
+        <svg
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+          aria-hidden
+          className="pointer-events-none absolute inset-0 h-full w-full overflow-visible"
+        >
           {cell.lagna === "possible" ? (
-            <path d="M0 26 L26 0" data-chart-item="" fill="none" stroke="var(--pen)" strokeWidth={1.6} strokeDasharray="3 4" opacity={0.6} />
+            <path
+              d="M0 26 L26 0"
+              data-chart-item=""
+              fill="none"
+              stroke="var(--pen)"
+              strokeWidth={1.6}
+              strokeDasharray="3 4"
+              opacity={0.6}
+            />
           ) : (
             <path
               d="M0 26 L26 0"
@@ -103,7 +115,7 @@ function SouthCell({ cell, selection, onSelect }: { cell: ChartCell; selection: 
               fill="none"
               stroke="var(--pen)"
               strokeWidth={1.6}
-             
+
               strokeLinecap="round"
               pathLength={1}
               strokeDasharray={1}

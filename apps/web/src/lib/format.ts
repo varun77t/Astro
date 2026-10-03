@@ -8,4 +8,3 @@ export function formatDegree(degrees: number): string {
   }
   return `${d}°${String(m).padStart(2, "0")}′`;
 }
-

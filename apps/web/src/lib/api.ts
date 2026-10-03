@@ -1,3 +1,4 @@
+import { accessToken } from "./supabase";
 import type { Area, BirthInput, BirthResolution, Chart, Dasha, GlossaryEntry, Narration, Place, Readings } from "./types";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
@@ -73,8 +74,12 @@ export function createReadings(birth: BirthInput): Promise<Readings> {
 }
 
 /** One area written as prose. Slow on a cache miss (a model writes it), so callers show a waiting state. */
-export function narrateReading(birth: BirthInput, area: Area, signal?: AbortSignal): Promise<Narration> {
-  return request(`/api/v1/readings/${area}/narration`, { ...postJson(birth), signal });
+export async function narrateReading(birth: BirthInput, area: Area, signal?: AbortSignal): Promise<Narration> {
+  // Signed-in users get a bigger daily allowance of AI-written readings.
+  const token = await accessToken().catch(() => null);
+  const init = postJson(birth);
+  if (token) init.headers = { ...init.headers, Authorization: `Bearer ${token}` };
+  return request(`/api/v1/readings/${area}/narration`, { ...init, signal });
 }
 
 let glossaryRequest: Promise<Map<string, GlossaryEntry>> | null = null;

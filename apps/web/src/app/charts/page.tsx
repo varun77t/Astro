@@ -6,9 +6,8 @@ import { useEffect, useState } from "react";
 import { FieldError } from "@/components/forms/Question";
 import { Arrow } from "@/components/paper/Marks";
 import { SHEET_X, Sheet } from "@/components/paper/Sheet";
-import { deleteAccount, deleteProfile, listProfiles, type ProfileSummary } from "@/lib/profiles";
+import { deleteProfile, listProfiles, type ProfileSummary } from "@/lib/profiles";
 import { useSession } from "@/lib/session";
-import { supabase } from "@/lib/supabase";
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -87,76 +86,8 @@ export default function ChartsPage() {
               </>
             )
           )}
-
-          {session.status === "signed-in" && <Account email={session.user.email ?? ""} />}
         </div>
       </main>
     </Sheet>
-  );
-}
-
-/** Who's signed in, signing out, and deleting everything. */
-function Account({ email }: { email: string }) {
-  const router = useRouter();
-  const [confirming, setConfirming] = useState(false);
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
-
-  async function erase() {
-    setBusy(true);
-    setError("");
-    try {
-      await deleteAccount();
-      router.replace("/?deleted=1");
-    } catch (err) {
-      setError(err instanceof Error ? err.message : String(err));
-      setBusy(false);
-    }
-  }
-
-  return (
-    <section className="mt-24 border-t border-rule-strong/70 pt-10" aria-labelledby="account-heading">
-      <h2 id="account-heading" className="text-sm text-muted">
-        Account
-      </h2>
-      <p className="mt-2 text-ink">{email}</p>
-      <button
-        type="button"
-        className="link mt-4 block"
-        onClick={async () => {
-          await supabase().auth.signOut();
-          router.replace("/");
-        }}
-      >
-        Sign out
-      </button>
-
-      <div className="mt-10 max-w-[52ch]">
-        {!confirming ? (
-          <button
-            type="button"
-            className="text-sm text-muted underline underline-offset-4 hover:text-pen"
-            onClick={() => setConfirming(true)}
-          >
-            Delete my account and data
-          </button>
-        ) : (
-          <div className="space-y-4 border-l-2 border-pen/40 pl-4">
-            <p className="text-ink">
-              This permanently deletes your account and every saved chart and birth detail in it. It can&rsquo;t be undone.
-            </p>
-            {error && <FieldError id="delete-error">{error}</FieldError>}
-            <div className="flex flex-wrap items-center gap-6">
-              <button type="button" className="btn !bg-pen" disabled={busy} onClick={erase}>
-                {busy ? "Deleting…" : "Delete everything"}
-              </button>
-              <button type="button" className="link" onClick={() => setConfirming(false)}>
-                Keep my account
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
-    </section>
   );
 }

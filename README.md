@@ -1,94 +1,156 @@
 # Vedic Astro
 
-A Vedic (sidereal, Lahiri) astrology app that explains *why* each reading says what it
-says, by linking every insight to the planetary placement behind it. See [plan.md](plan.md)
-for the full build plan.
+A Vedic (sidereal, Lahiri) astrology web app: birth chart, dasha periods and readings for
+education, career, money, health and relationships, each linked to the placement behind it.
+
+## Screenshots
+
+| | |
+|---|---|
+| ![Home page](docs/screenshots/1-home.png) | ![Birth details form](docs/screenshots/2-birth-details.png) |
+| **Home.** A sample chart, with a reading and the placement behind it. | **Birth details.** Date, how sure you are of the time, and place. |
+| ![Confirmation screen](docs/screenshots/3-confirm.png) | ![Chart page](docs/screenshots/4-chart.png) |
+| **Check.** The time zone and UTC offset used, before anything is calculated. | **Chart.** South or North Indian, D1 or D9; tap a planet or house to see what it means. |
+| ![Readings](docs/screenshots/5-readings.png) | ![Dasha periods](docs/screenshots/6-periods.png) |
+| **Readings.** Five life areas, written by AI from matched rules; "Why this?" shows the placements. | **Periods.** Vimshottari dasha across your life, with the sub-periods of each. |
+| ![Sign in](docs/screenshots/7-account.png) | |
+| **Account.** Email and password; save charts for yourself and family. | |
+
+## Layout
 
 ```
-apps/api   FastAPI backend: chart engine (Swiss Ephemeris), rule readings, LLM narration
-apps/web   Next.js + Tailwind frontend
-data/      golden charts from reference software, used by tests
-docs/      calculation conventions and other decisions
+apps/api              FastAPI backend: chart engine, rules, AI-written readings
+apps/web              Next.js frontend
+supabase/migrations   Database tables and security for accounts (Supabase)
+data/golden_charts    Reference charts the tests check against
+docs/                 Calculation conventions, rule-writing guide, privacy
 ```
 
-## Status
+## Requirements
 
-- [x] Phase 0: repo, tooling, CI workflows, conventions doc
-- [x] Phase 1: chart engine: planets, ascendant, whole-sign houses, nakshatra/pada,
-      dignity, combustion, D9, timezone handling, `POST /api/v1/chart`
-- [x] Phase 2: place search (Photon, Nominatim fallback, cached), offline timezone lookup,
-      birth form with exact/approximate/unknown time, confirmation screen with UTC offset,
-      historical-time notes and custom offset, raw chart JSON at `/onboarding`
-- [x] Golden charts from Drik Panchang and AstroSage (see `data/golden_charts/README.md`)
-- [x] Phase 3: South and North Indian charts, planet table, D9, tap-to-explain glossary
-- [x] Phase 4: Vimshottari dasha, `POST /api/v1/dasha`, timeline under the chart
-- [x] Phase 5: rule engine (214 rules, five areas), `POST /api/v1/readings`, "Why this?"
-- [x] Phase 6: LLM narration with provider fallback, cache and validator,
-      `POST /api/v1/readings/{area}/narration`; rule-only text when no provider answers
-- [x] Phase 7 (in progress): email/password accounts (Supabase), saved charts with
-      consent, "Delete my data", per-user daily AI allowance; see `docs/privacy.md`
+- **Python 3.11+** (3.12 recommended)
+- **Node.js 20+** and npm
+- Git
+- Optional: a free [Supabase](https://supabase.com) project, for accounts and saved charts
+- Optional: free API keys from [Google AI Studio](https://aistudio.google.com/apikey)
+  and/or [Groq](https://console.groq.com/keys), for AI-written readings
 
-## Backend
+Without the optional parts the app still works: charts, periods and readings all load, and
+readings show the rule texts instead of AI-written prose. Sign-in and saving need Supabase.
+
+## 1. Get the code
+
+```bash
+git clone https://github.com/varun77t/Astro.git
+cd Astro
+```
+
+## 2. Configure
+
+### API settings (`.env` in the repo root)
+
+```bash
+cp .env.example .env
+```
+
+Then fill in what you have:
+
+| Variable | Needed for | Where to get it |
+|---|---|---|
+| `GEMINI_API_KEY` | AI-written readings | [aistudio.google.com/apikey](https://aistudio.google.com/apikey) |
+| `GROQ_API_KEY` | AI-written readings (backup) | [console.groq.com/keys](https://console.groq.com/keys) |
+| `SUPABASE_URL` | Signed-in users' higher AI allowance | Supabase → Project Settings → API |
+| `GEOCODER_USER_AGENT` | Place search etiquette | Put your own email in it |
+
+Paste each value straight after the `=`, with no quotes or spaces. `.env` is git-ignored;
+never commit it.
+
+### Web settings (`apps/web/.env.local`)
+
+```bash
+cp apps/web/.env.example apps/web/.env.local
+```
+
+| Variable | Value |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | Your Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Supabase → Project Settings → API keys → publishable key (`sb_publishable_…`) |
+| `NEXT_PUBLIC_API_URL` | Only if the API isn't on `http://localhost:8000` |
+
+### Supabase (only for accounts)
+
+1. Create a free project at [supabase.com](https://supabase.com).
+2. In the SQL editor, run each file in `supabase/migrations/`, oldest first. This creates the
+   `profiles` and `charts` tables with row-level security (each user sees only their own rows).
+3. For local testing, turn off **Authentication → Sign In / Providers → Email → Confirm email**,
+   so new accounts can sign in straight away. Turn it back on before going public.
+4. Copy the project URL and publishable key into the two env files above.
+
+## 3. Run the API
 
 ```bash
 cd apps/api
 python -m venv .venv
-.venv/Scripts/activate        # Windows; use .venv/bin/activate on macOS/Linux
+.venv/Scripts/activate          # Windows (Git Bash: source .venv/Scripts/activate)
+# source .venv/bin/activate     # macOS / Linux
 pip install -e ".[dev]"
-pytest
-uvicorn app.main:app --reload # http://localhost:8000/docs
+uvicorn app.main:app --reload --port 8000
 ```
 
-Print a chart for comparison with reference software:
+The API runs at http://localhost:8000 (interactive docs at http://localhost:8000/docs).
 
-```bash
-python -m app.cli 1990-05-17 14:35 Asia/Kolkata 12.9716 77.5946
-```
+## 4. Run the web app
 
-## Frontend
+In a second terminal:
 
 ```bash
 cd apps/web
 npm install
-npm run dev                   # http://localhost:3000/onboarding (needs the API running)
-npm test
+npm run dev
 ```
 
-## LLM keys (optional)
+Open http://localhost:3000 and click **Calculate my chart**.
 
-Readings are written as prose by free LLM APIs when keys are set; without them the rule
-texts are shown as they are. Copy `.env.example` to `.env` at the repo root and add any of
-`GEMINI_API_KEY` ([AI Studio](https://aistudio.google.com/apikey)), `GROQ_API_KEY`
-([Groq console](https://console.groq.com/keys)) and `OPENROUTER_API_KEY`
-([OpenRouter](https://openrouter.ai/settings/keys)). Models and free-tier limits live in
-`apps/api/app/llm/providers.yaml`. To check answers against 20 charts with real calls:
+## Tests
+
+```bash
+cd apps/api && pytest                  # engine, rules, dasha, AI layer (no real AI calls)
+cd apps/web && npm test                # frontend logic
+cd apps/web && npm run lint && npm run build
+```
+
+## Useful extras
+
+Print a chart in the terminal, to compare with other software:
 
 ```bash
 cd apps/api
-python -m app.llm.eval
+python -m app.cli 1990-05-17 14:35 Asia/Kolkata 12.9716 77.5946
 ```
 
-Only chart facts (signs, houses, dignities, running dasha) and the matched rules are sent:
-never a name, birth date, time or place. Narrations are cached by a hash of exactly that
-input in `apps/api/.cache/readings.sqlite3`, so a repeat costs nothing.
+Check AI-written readings against 20 charts with real calls (uses your free quota):
 
-## Accounts (Supabase)
+```bash
+cd apps/api
+python -m app.llm.eval --provider groq --areas career --charts 20
+```
 
-Sign-in, saved profiles and charts live in Supabase; the schema and row-level security
-policies are in `supabase/migrations/`. The web app reads `NEXT_PUBLIC_SUPABASE_URL` and
-`NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` from `apps/web/.env.local`; the API only needs
-`SUPABASE_URL` (it checks sign-in tokens against the project's public signing keys).
+## Troubleshooting
 
-## Third-party services
-
-Place search sends only the typed place name to [Photon](https://photon.komoot.io)
-(fallback: [Nominatim](https://nominatim.org)), both OpenStreetMap-based and free with
-fair-use limits. Set `GEOCODER_USER_AGENT` to something that identifies you before
-deploying. Results are cached in SQLite (`apps/api/.cache/`), so repeat searches never
-leave the server. Timezones are resolved offline with `timezonefinder`.
+- **Readings say "Showing the quick version".** No AI provider answered: no keys in `.env`,
+  today's free quota is used up (Gemini's free tier is about 20 requests per model per day),
+  or a model was retired. Check the keys, wait for the daily reset, or change the model name
+  in `apps/api/app/llm/providers.yaml`.
+- **Place search finds nothing.** It needs internet access (OpenStreetMap's Photon and
+  Nominatim). Try the nearest town.
+- **"Accounts aren't configured".** `apps/web/.env.local` is missing the Supabase values;
+  restart `npm run dev` after adding them.
+- **Sign-up says to check your email.** Email confirmation is still on in Supabase (see above).
+- **The web app can't reach the server.** Make sure the API is running on port 8000, or set
+  `NEXT_PUBLIC_API_URL`.
 
 ## License
 
-The engine uses Swiss Ephemeris, which is dual-licensed (AGPL or a paid professional
-license). Running it as a public service under AGPL means this project's source must be
-published under the AGPL as well. See the licensing warning in plan.md.
+The chart engine uses Swiss Ephemeris, which is dual-licensed (AGPL or a paid professional
+license). Running this as a public service under the AGPL means publishing its source under
+the AGPL too.

@@ -1,0 +1,118 @@
+{
+  "id": "newyork-1979",
+  "source": "Planets: Drik Panchang sidereal planetary positions (Lahiri/Chitrapaksha, mean node), fetched 2026-10-03. Ascendant: AstroSage cloud kundli (N.C. Lahiri) entered with exactly the coordinates and UTC offset below. Drik Panchang's ascendant is not used: it runs ahead by about longitude x 0.00274 deg of sidereal time (10-20' for Indian cities).",
+  "notes": "Western hemisphere in daylight saving time (EDT, -04:00). Mercury retrograde, Jupiter exalted.",
+  "birth": {
+    "date": "1979-08-05",
+    "time": "16:40:00",
+    "tz_name": "America/New_York",
+    "lat": 40.716667,
+    "lon": -74.0,
+    "expected_utc_offset": "-04:00",
+    "coordinates_dms": "40°43'N 74°00'W"
+  },
+  "tolerance_arcmin": 1.0,
+  "ascendant_tolerance_arcmin": 1.0,
+  "expected": {
+    "ascendant": "Scorpio 25:43:22",
+    "planets": {
+      "Sun": "Cancer 19:14:44.74",
+      "Moon": "Sagittarius 17:25:08.81",
+      "Mars": "Gemini 4:37:15.29",
+      "Mercury": "Cancer 10:59:12.21",
+      "Jupiter": "Cancer 24:48:27.71",
+      "Venus": "Cancer 13:50:21.08",
+      "Saturn": "Leo 19:19:35.37",
+      "Rahu": "Leo 16:09:50.82",
+      "Ketu": "Aquarius 16:09:50.82"
+    },
+    "nakshatras": {
+      "Moon": [
+        "Purva Ashadha",
+        2
+      ]
+    }
+  },
+  "dasha": {
+    "source": "AstroSage cloud kundli, Vimshottari, fetched 2026-10-03. Dates are end dates. Computed from AstroSage's own Moon below, so the test checks the dasha arithmetic, not the ephemeris.",
+    "reference_moon": "Sagittarius 17:25:16",
+    "mahadasha_ends": [
+      [
+        "Venus",
+        "1993-06-18"
+      ],
+      [
+        "Sun",
+        "1999-06-18"
+      ],
+      [
+        "Moon",
+        "2009-06-18"
+      ],
+      [
+        "Mars",
+        "2016-06-18"
+      ],
+      [
+        "Rahu",
+        "2034-06-18"
+      ],
+      [
+        "Jupiter",
+        "2050-06-18"
+      ],
+      [
+        "Saturn",
+        "2069-06-18"
+      ],
+      [
+        "Mercury",
+        "2086-06-18"
+      ],
+      [
+        "Ketu",
+        "2093-06-18"
+      ]
+    ],
+    "antardasha_ends": {
+      "Sun": [
+        [
+          "Sun",
+          "1993-10-06"
+        ],
+        [
+          "Moon",
+          "1994-04-06"
+        ],
+        [
+          "Mars",
+          "1994-08-12"
+        ],
+        [
+          "Rahu",
+          "1995-07-06"
+        ],
+        [
+          "Jupiter",
+          "1996-04-24"
+        ],
+        [
+          "Saturn",
+          "1997-04-06"
+        ],
+        [
+          "Mercury",
+          "1998-02-12"
+        ],
+        [
+          "Ketu",
+          "1998-06-18"
+        ],
+        [
+          "Venus",
+          "1999-06-18"
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+name: api-ci
+
+on:
+  push:
+    paths: ["apps/api/**", "data/golden_charts/**", ".github/workflows/api-ci.yml"]
+  pull_request:
+    paths: ["apps/api/**", "data/golden_charts/**", ".github/workflows/api-ci.yml"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/api
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: apps/api/pyproject.toml
+      - run: pip install -e ".[dev]"
+      - run: ruff check .
+      - run: ruff format --check .
+      - run: pytest -q -rs

@@ -1,0 +1,78 @@
+{
+  "id": "pune-2002",
+  "source": "Planets: Drik Panchang sidereal planetary positions (Lahiri/Chitrapaksha, mean node), fetched 2026-10-03. Ascendant: AstroSage cloud kundli (N.C. Lahiri) entered with exactly the coordinates and UTC offset below. Drik Panchang's ascendant is not used: it runs ahead by about longitude x 0.00274 deg of sidereal time (10-20' for Indian cities).",
+  "notes": "The sample chart on the landing page. Moon at 29 deg 40' Sagittarius, 20' from a sign boundary.",
+  "birth": {
+    "date": "2002-03-09",
+    "time": "07:45:00",
+    "tz_name": "Asia/Kolkata",
+    "lat": 18.516667,
+    "lon": 73.85,
+    "expected_utc_offset": "+05:30",
+    "coordinates_dms": "18°31'N 73°51'E"
+  },
+  "tolerance_arcmin": 1.0,
+  "ascendant_tolerance_arcmin": 1.0,
+  "expected": {
+    "ascendant": "Pisces 11:27:56",
+    "planets": {
+      "Sun": "Aquarius 24:25:57.99",
+      "Moon": "Sagittarius 29:40:01.35",
+      "Mars": "Aries 11:22:53.87",
+      "Mercury": "Aquarius 1:48:21.44",
+      "Jupiter": "Gemini 11:49:15.02",
+      "Venus": "Pisces 7:22:44.94",
+      "Saturn": "Taurus 14:55:07.00",
+      "Rahu": "Taurus 28:54:52.59",
+      "Ketu": "Scorpio 28:54:52.59"
+    },
+    "nakshatras": {
+      "Moon": [
+        "Uttara Ashadha",
+        1
+      ]
+    }
+  },
+  "dasha": {
+    "source": "AstroSage cloud kundli, Vimshottari, fetched 2026-10-03. Dates are end dates. Computed from AstroSage's own Moon below, so the test checks the dasha arithmetic, not the ephemeris.",
+    "reference_moon": "Sagittarius 29:40:16",
+    "mahadasha_ends": [
+      [
+        "Sun",
+        "2006-11-02"
+      ],
+      [
+        "Moon",
+        "2016-11-02"
+      ],
+      [
+        "Mars",
+        "2023-11-02"
+      ],
+      [
+        "Rahu",
+        "2041-11-02"
+      ],
+      [
+        "Jupiter",
+        "2057-11-02"
+      ],
+      [
+        "Saturn",
+        "2076-11-02"
+      ],
+      [
+        "Mercury",
+        "2093-11-02"
+      ],
+      [
+        "Ketu",
+        "2100-11-02"
+      ],
+      [
+        "Venus",
+        "2120-11-02"
+      ]
+    ]
+  }
+}

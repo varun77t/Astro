@@ -1,0 +1,543 @@
+# Education: learning, study habits and higher studies.
+#
+# Houses: 4th (schooling, a settled base), 5th (intellect, memory), 9th (higher learning,
+# teachers), 2nd and 3rd (speech, writing). Karakas: Mercury (intellect), Jupiter (wisdom),
+# Moon (concentration). Write frankly; see docs/rule-writing-guide.md before adding rules.
+
+area: education
+title: Education
+summary:
+  supportive: Your chart is strong for learning.
+  mixed: Your chart has clear strengths for learning, and some real obstacles.
+  cautionary: Learning is harder for you than for most. Expect delays, and more effort for the same results.
+  quiet: Nothing in your chart marks learning out, for good or bad.
+
+rules:
+  # ------------------------------------------------------------- planets in the 5th house
+  - id: EDU-5H-JUP
+    title: Jupiter in the 5th house
+    when: {planet: Jupiter, house: 5}
+    effect: "Strong for learning. Curiosity and good teachers come together; teaching, law, finance or philosophy suit you."
+    tone: supportive
+    weight: 0.8
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Jupiter: Leo}
+
+  - id: EDU-5H-MER
+    title: Mercury in the 5th house
+    when: {planet: Mercury, house: 5}
+    effect: "A quick, sharp mind. Maths, languages, writing and puzzles come easily."
+    tone: supportive
+    weight: 0.7
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Mercury: Leo}
+
+  - id: EDU-5H-VEN
+    title: Venus in the 5th house
+    when: {planet: Venus, house: 5}
+    effect: "You learn through beauty and creativity. Art, design, music or literature pull you in."
+    tone: supportive
+    weight: 0.6
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Venus: Leo}
+
+  - id: EDU-5H-SUN
+    title: Sun in the 5th house
+    when: {planet: Sun, house: 5}
+    effect: "You study with confidence and want to be the best at what you learn. Sciences and leadership roles appeal."
+    tone: supportive
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Sun: Leo}
+
+  - id: EDU-5H-MOO
+    title: Moon in the 5th house
+    when: {planet: Moon, house: 5}
+    effect: "Imaginative, with a strong memory for what you care about. Your mood decides your focus more than it should."
+    tone: neutral
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Moon: Leo}
+
+  - id: EDU-5H-MAR
+    title: Mars in the 5th house
+    when: {planet: Mars, house: 5}
+    effect: "Sharp and competitive, fast at solving problems. Technical subjects suit you, but you rush and skip details."
+    tone: neutral
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Mars: Leo}
+
+  - id: EDU-5H-SAT
+    title: Saturn in the 5th house
+    when: {planet: Saturn, house: 5}
+    effect: "Studies come slowly, with delays or breaks and pressure around results. What you do learn, you learn thoroughly."
+    tone: cautionary
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Saturn: Leo}
+
+  - id: EDU-5H-RAH
+    title: Rahu in the 5th house
+    when: {planet: Rahu, house: 5}
+    effect: "Drawn to new, unusual or foreign subjects, like technology. Focus scatters, and you start more than you finish."
+    tone: neutral
+    weight: 0.5
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Rahu: Leo}
+
+  - id: EDU-5H-KET
+    title: Ketu in the 5th house
+    when: {planet: Ketu, house: 5}
+    effect: "An inward, intuitive mind. You lose interest in rote learning and do better with research and depth."
+    tone: neutral
+    weight: 0.4
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Ketu: Leo}
+
+  # ------------------------------------------------------------------ the 5th house lord
+  - id: EDU-5L-STRONG
+    title: Ruler of the 5th house is strong
+    when: {lord_of: 5, dignity: strong}
+    effect: "Intelligence is a real asset in your chart. What you study stays with you."
+    tone: supportive
+    weight: 0.8
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: edu-5l-dignity
+    test: {lagna: Aries, Sun: Aries}
+
+  - id: EDU-5L-WEAK
+    title: Ruler of the 5th house is debilitated
+    when: {lord_of: 5, dignity: weak}
+    effect: "The house of intelligence is weakened. Focus takes effort, and results often lag behind the work you put in."
+    tone: cautionary
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: edu-5l-dignity
+    test: {lagna: Aries, Sun: Libra}
+
+  - id: EDU-5L-GOOD-HOUSE
+    title: Ruler of the 5th house in an angle or trine
+    when: {lord_of: 5, house: [kendra, trikona]}
+    effect: "Your intelligence finds an outlet. Learning connects with the rest of your life."
+    tone: supportive
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: edu-5l-place
+    test: {lagna: Aries, Sun: Cancer}
+
+  - id: EDU-5L-DUSTHANA
+    title: Ruler of the 5th house in the 6th, 8th or 12th
+    when: {lord_of: 5, house: dusthana}
+    effect: "Studies meet obstacles: breaks, changes of course, or unfinished degrees are common with this placement."
+    tone: cautionary
+    weight: 0.5
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: edu-5l-place
+    test: {lagna: Aries, Sun: Virgo}
+
+  - id: EDU-1L-5H
+    title: Ruler of the 1st house in the 5th
+    when: {lord_of: 1, house: 5}
+    effect: "Learning is part of who you are. You enjoy study for its own sake."
+    tone: supportive
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    test: {lagna: Aries, Mars: Leo}
+
+  - id: EDU-5L-1H
+    title: Ruler of the 5th house in the 1st
+    when: {lord_of: 5, house: 1}
+    effect: "Your intelligence shows. People see you as bright."
+    tone: supportive
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    test: {lagna: Aries, Sun: Aries}
+
+  - id: EDU-5L-9L
+    title: Rulers of the 5th and 9th houses together
+    when: {lord_of: 5, with_lord_of: 9}
+    effect: "Learning and good fortune are linked in your chart. Studies open doors for you."
+    tone: supportive
+    weight: 0.8
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: edu-5-9
+    test: {lagna: Aries, Sun: Sagittarius 10, Jupiter: Sagittarius 25}
+
+  - id: EDU-5-9-EXCHANGE
+    title: Rulers of the 5th and 9th houses exchange signs
+    when: {exchange: [5, 9]}
+    effect: "Learning and fortune support each other. Higher studies come with luck on your side."
+    tone: supportive
+    weight: 0.8
+    source: Parivartana between trine lords (BPHS, paraphrased)
+    group: edu-5-9
+    test: {lagna: Aries, Sun: Sagittarius, Jupiter: Leo}
+
+  - id: EDU-5H-JUP-ASPECT
+    title: Jupiter aspects the 5th house
+    when: {house: 5, aspected_by: Jupiter}
+    effect: "Jupiter protects your learning. Good guidance turns up when you need it."
+    tone: supportive
+    weight: 0.5
+    source: Graha drishti (BPHS, paraphrased)
+    test: {lagna: Aries, Jupiter: Aries}
+
+  - id: EDU-5H-SAT-ASPECT
+    title: Saturn aspects the 5th house
+    when: {house: 5, aspected_by: Saturn}
+    effect: "Saturn weighs on learning. Studies feel like hard work, and steady effort beats talent here."
+    tone: cautionary
+    weight: 0.3
+    source: Graha drishti (BPHS, paraphrased)
+    test: {lagna: Aries, Saturn: Gemini}
+
+  # ---------------------------------------------------------- the 4th house: a settled base
+  - id: EDU-4H-BENEFIC
+    title: A benefic in the 4th house
+    when: {house: 4, has: [Jupiter, Venus, Mercury]}
+    effect: "A settled, supportive setting for study. You learn best where you feel at home."
+    tone: supportive
+    weight: 0.6
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Venus: Cancer}
+
+  - id: EDU-4H-HARD
+    title: Saturn, Rahu or Ketu in the 4th house
+    when: {house: 4, has: [Saturn, Rahu, Ketu]}
+    effect: "Home is not a calm place to study. Early schooling was unsettled, or there was little peace at home to focus."
+    tone: cautionary
+    weight: 0.4
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Saturn: Cancer}
+
+  - id: EDU-4L-STRONG
+    title: Ruler of the 4th house is strong
+    when: {lord_of: 4, dignity: strong}
+    effect: "A solid foundation in schooling that carries you a long way."
+    tone: supportive
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: edu-4l
+    test: {lagna: Aries, Moon: Taurus}
+
+  - id: EDU-4L-WEAK
+    title: Ruler of the 4th house is debilitated
+    when: {lord_of: 4, dignity: weak}
+    effect: "Early education was disrupted or unsettled, and gaps from then can show later."
+    tone: cautionary
+    weight: 0.5
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: edu-4l
+    test: {lagna: Aries, Moon: Scorpio}
+
+  # ------------------------------------------------------------ the 9th house: higher learning
+  - id: EDU-9H-JUP
+    title: Jupiter in the 9th house
+    when: {planet: Jupiter, house: 9}
+    effect: "Higher studies and good teachers feature strongly. Philosophy, law or anything with meaning draws you."
+    tone: supportive
+    weight: 0.7
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Jupiter: Sagittarius}
+
+  - id: EDU-9H-SAT
+    title: Saturn in the 9th house
+    when: {planet: Saturn, house: 9}
+    effect: "Higher studies come late or after a break. You value practical, proven learning over theory."
+    tone: neutral
+    weight: 0.4
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Saturn: Sagittarius}
+
+  - id: EDU-9L-STRONG
+    title: Ruler of the 9th house is strong
+    when: {lord_of: 9, dignity: strong}
+    effect: "Mentors and higher learning come your way, often at the right time."
+    tone: supportive
+    weight: 0.7
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: edu-9l
+    test: {lagna: Aries, Jupiter: Cancer}
+
+  - id: EDU-9L-WEAK
+    title: Ruler of the 9th house is debilitated
+    when: {lord_of: 9, dignity: weak}
+    effect: "Support for higher studies is weak. Good mentors are hard to find, and you have to seek them out."
+    tone: cautionary
+    weight: 0.4
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: edu-9l
+    test: {lagna: Aries, Jupiter: Capricorn}
+
+  - id: EDU-AWAY
+    title: Study away from home
+    when:
+      any:
+        - {lord_of: 4, house: 12}
+        - {lord_of: 9, house: 12}
+        - {planet: Rahu, house: [9, 12]}
+    effect: "Your chart points to studying away from home, possibly abroad."
+    tone: neutral
+    weight: 0.5
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Rahu: Sagittarius}
+
+  # ----------------------------------------------------------------- Mercury, the intellect
+  - id: EDU-MER-STRONG
+    title: Mercury is strong
+    when: {planet: Mercury, dignity: strong}
+    effect: "An organised, articulate mind. Maths, languages, writing and analysis come easily."
+    tone: supportive
+    weight: 0.7
+    source: Karaka reading (BPHS, paraphrased)
+    group: edu-mer
+    test: {lagna: Aries, Mercury: Virgo}
+
+  - id: EDU-MER-WEAK
+    title: Mercury is debilitated
+    when: {planet: Mercury, dignity: weak}
+    effect: "Mercury, the planet of intellect, is weak. Step-by-step subjects like maths and grammar are a struggle; your thinking is intuitive."
+    tone: cautionary
+    weight: 0.5
+    source: Karaka reading (BPHS, paraphrased)
+    group: edu-mer
+    test: {lagna: Aries, Mercury: Pisces}
+
+  - id: EDU-MER-COMBUST
+    title: Mercury is combust
+    when: {planet: Mercury, combust: true}
+    effect: "Your thinking is overshadowed by ego or pressure. You know more than you can explain, and exams under stress go worse."
+    tone: cautionary
+    weight: 0.3
+    source: Combustion (Surya Siddhanta orbs; common teaching)
+    test: {lagna: Aries, Sun: Sagittarius 10, Mercury: Sagittarius 15}
+
+  - id: EDU-BUDHADITYA
+    title: Budha-Aditya yoga
+    when: {planet: Mercury, with: Sun, combust: false}
+    effect: "Budha-Aditya yoga: sharp, practical intelligence. You do well in exams and anything that rewards clear thinking."
+    tone: supportive
+    weight: 0.6
+    source: Named yoga, widely taught
+    test: {lagna: Aries, Sun: Sagittarius 5, Mercury: Sagittarius 25}
+
+  - id: EDU-MER-VARGOTTAMA
+    title: Mercury keeps its sign in the navamsa
+    when: {planet: Mercury, vargottama: true}
+    effect: "Your way of thinking is consistent and dependable. Skills you build last."
+    tone: supportive
+    weight: 0.4
+    source: Vargottama (common teaching)
+    test: {lagna: Aries, Mercury: Virgo 28}
+
+  - id: EDU-2H-MER
+    title: Mercury in the 2nd house
+    when: {planet: Mercury, house: 2}
+    effect: "Articulate, with a feel for words and numbers. Languages and accounts come easily."
+    tone: supportive
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Mercury: Taurus}
+
+  - id: EDU-3H-MER
+    title: Mercury in the 3rd house
+    when: {planet: Mercury, house: 3}
+    effect: "Writing, speaking and media skills come naturally and grow with practice."
+    tone: supportive
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Mercury: Gemini}
+
+  - id: EDU-MER-MAR
+    title: Mercury with Mars
+    when: {planet: Mercury, with: Mars}
+    effect: "Analytical and technical. Engineering, coding or anything hands-on with logic suits you."
+    tone: supportive
+    weight: 0.5
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Mars: Gemini 15, Mercury: Gemini 5}
+
+  - id: EDU-MER-RAH
+    title: Mercury with Rahu
+    when: {planet: Mercury, with: Rahu}
+    effect: "Inventive, unconventional thinking. Technology and research draw you, but you jump between subjects."
+    tone: neutral
+    weight: 0.4
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Mercury: Capricorn 20, Rahu: Capricorn}
+
+  # ----------------------------------------------------------------- Jupiter, the teacher
+  - id: EDU-JUP-STRONG
+    title: Jupiter is strong
+    when: {planet: Jupiter, dignity: strong}
+    effect: "Wisdom and good judgment. You learn best from teachers you respect, and later teach others."
+    tone: supportive
+    weight: 0.7
+    source: Karaka reading (BPHS, paraphrased)
+    group: edu-jup
+    test: {lagna: Aries, Jupiter: Cancer}
+
+  - id: EDU-JUP-WEAK
+    title: Jupiter is debilitated
+    when: {planet: Jupiter, dignity: weak}
+    effect: "Jupiter, the teacher, is weak. Poor guidance or bad teachers are a pattern; you end up learning on your own."
+    tone: cautionary
+    weight: 0.4
+    source: Karaka reading (BPHS, paraphrased)
+    group: edu-jup
+    test: {lagna: Aries, Jupiter: Capricorn}
+
+  - id: EDU-2H-JUP
+    title: Jupiter in the 2nd house
+    when: {planet: Jupiter, house: 2}
+    effect: "You explain what you know clearly. Teaching and advising come naturally."
+    tone: supportive
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Jupiter: Taurus}
+
+  - id: EDU-GAJAKESARI
+    title: Gaja Kesari yoga
+    when: {planet: Jupiter, from: moon, house: kendra}
+    effect: "Gaja Kesari yoga. What you know earns you respect, and learning brings recognition."
+    tone: supportive
+    weight: 0.5
+    source: Named yoga (BPHS and Phaladeepika, paraphrased)
+    test: {lagna: Aries, Moon: Aquarius, Jupiter: Taurus}
+
+  - id: EDU-SARASWATI
+    title: Saraswati yoga
+    when:
+      all:
+        - {planet: Jupiter, house: [1, 2, 4, 5, 7, 9, 10], dignity: [exalted, moolatrikona, own, friendly]}
+        - {planet: Venus, house: [1, 2, 4, 5, 7, 9, 10]}
+        - {planet: Mercury, house: [1, 2, 4, 5, 7, 9, 10]}
+    effect: "Saraswati yoga, a classic mark of learning, eloquence and the arts. Study shapes your life."
+    tone: supportive
+    weight: 0.9
+    source: Named yoga (Phaladeepika, paraphrased)
+    test: {lagna: Aries, Jupiter: Cancer, Venus: Leo, Mercury: Leo}
+
+  # ----------------------------------------------------------- the Moon: focus and memory
+  - id: EDU-MOON-STRONG
+    title: The Moon is strong
+    when: {planet: Moon, dignity: strong}
+    effect: "Steady focus and a good memory support your studies."
+    tone: supportive
+    weight: 0.5
+    source: Karaka reading (BPHS, paraphrased)
+    group: edu-moon
+    test: {lagna: Aries, Moon: Taurus}
+
+  - id: EDU-MOON-WEAK
+    title: The Moon is debilitated
+    when: {planet: Moon, dignity: weak}
+    effect: "The Moon, your mind, is weak. Focus swings with your mood, and anxiety gets in the way at exam time."
+    tone: cautionary
+    weight: 0.4
+    source: Karaka reading (BPHS, paraphrased)
+    group: edu-moon
+    test: {lagna: Aries, Moon: Scorpio}
+
+  - id: EDU-MOON-SAT
+    title: The Moon with Saturn
+    when: {planet: Moon, with: Saturn}
+    effect: "A heavy, self-critical mind. You worry about results and are harder on yourself than others are."
+    tone: cautionary
+    weight: 0.4
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Moon: Taurus, Saturn: Taurus}
+
+  # ------------------------------------------------------------- other leanings
+  - id: EDU-VEN-STRONG
+    title: Venus is strong
+    when: {planet: Venus, dignity: strong}
+    effect: "A real feel for art, design, music or language, worth developing."
+    tone: supportive
+    weight: 0.4
+    source: Karaka reading (BPHS, paraphrased)
+    test: {lagna: Aries, Venus: Pisces}
+
+  - id: EDU-KET-RESEARCH
+    title: Ketu in the 8th or 12th house
+    when: {planet: Ketu, house: [8, 12]}
+    effect: "Drawn to deep, hidden subjects like research, psychology or philosophy."
+    tone: neutral
+    weight: 0.4
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Ketu: Pisces}
+
+  # ----------------------------------------------------------------- the running period
+  - id: EDU-DASHA-RULES
+    title: Your main period's planet rules learning
+    when: {period: maha, rules: [4, 5, 9]}
+    effect: "This period puts learning at the centre. Courses or exams you take on now get your full attention."
+    tone: supportive
+    weight: 0.7
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: edu-period-maha
+    test: {lagna: Aries, period: {maha: Sun}}
+
+  - id: EDU-DASHA-KARAKA
+    title: A Mercury or Jupiter main period
+    when: {period: maha, is: [Mercury, Jupiter]}
+    effect: "A period that favours study, exams and new skills."
+    tone: supportive
+    weight: 0.6
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: edu-period-maha
+    test: {lagna: Aries, period: {maha: Mercury}}
+
+  - id: EDU-DASHA-IN
+    title: Your main period's planet sits in a house of learning
+    when: {period: maha, house: [4, 5, 9]}
+    effect: "Learning is a theme of this period, formally or not."
+    tone: supportive
+    weight: 0.5
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: edu-period-maha
+    test: {lagna: Aries, Saturn: Leo, period: {maha: Saturn}}
+
+  - id: EDU-DASHA-DETOUR
+    title: Your main period's planet rules the 8th or 12th house
+    when:
+      all:
+        - {period: maha, rules: [8, 12]}
+        - {not: {period: maha, rules: [1, 4, 5, 9]}}
+    effect: "A period of breaks and detours in study. Plans made now are likely to change."
+    tone: cautionary
+    weight: 0.3
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: edu-period-maha
+    test: {lagna: Taurus, period: {maha: Jupiter}}
+
+  - id: EDU-DASHA-QUIET
+    title: Your main period and learning
+    when: {period: maha}
+    effect: "Your current period isn't tied to learning, for better or worse."
+    tone: neutral
+    weight: 0.1
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: edu-period-maha
+    test: {lagna: Aries, period: {maha: Saturn}}
+
+  - id: EDU-DASHA-ANTAR
+    title: Your sub-period's planet rules learning
+    when: {period: antar, rules: [4, 5, 9]}
+    effect: "The current sub-period turns you towards study and new skills."
+    tone: supportive
+    weight: 0.5
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: edu-period-antar
+    test: {lagna: Aries, period: {maha: Saturn, antar: Jupiter}}
+
+  - id: EDU-DASHA-ANTAR-KARAKA
+    title: A Mercury or Jupiter sub-period
+    when: {period: antar, is: [Mercury, Jupiter]}
+    effect: "The current sub-period favours study and clear thinking."
+    tone: supportive
+    weight: 0.4
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: edu-period-antar
+    test: {lagna: Aries, period: {maha: Saturn, antar: Mercury}}

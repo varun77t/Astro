@@ -1,0 +1,78 @@
+{
+  "id": "london-1995",
+  "source": "Planets: Drik Panchang sidereal planetary positions (Lahiri/Chitrapaksha, mean node), fetched 2026-10-03. Ascendant: AstroSage cloud kundli (N.C. Lahiri) entered with exactly the coordinates and UTC offset below. Drik Panchang's ascendant is not used: it runs ahead by about longitude x 0.00274 deg of sidereal time (10-20' for Indian cities).",
+  "notes": "Summer daylight saving (BST, +01:00) at a high latitude. Jupiter and Saturn retrograde.",
+  "birth": {
+    "date": "1995-07-15",
+    "time": "10:20:00",
+    "tz_name": "Europe/London",
+    "lat": 51.5,
+    "lon": -0.133333,
+    "expected_utc_offset": "+01:00",
+    "coordinates_dms": "51°30'N 0°08'W"
+  },
+  "tolerance_arcmin": 1.0,
+  "ascendant_tolerance_arcmin": 1.0,
+  "expected": {
+    "ascendant": "Leo 23:57:20",
+    "planets": {
+      "Sun": "Gemini 28:38:17.63",
+      "Moon": "Aquarius 8:58:36.30",
+      "Mars": "Virgo 2:41:45.79",
+      "Mercury": "Gemini 14:31:22.39",
+      "Jupiter": "Scorpio 12:14:21.94",
+      "Venus": "Gemini 18:34:45.10",
+      "Saturn": "Pisces 0:52:57.77",
+      "Rahu": "Libra 7:36:59.67",
+      "Ketu": "Aries 7:36:59.67"
+    },
+    "nakshatras": {
+      "Moon": [
+        "Shatabhisha",
+        1
+      ]
+    }
+  },
+  "dasha": {
+    "source": "AstroSage cloud kundli, Vimshottari, fetched 2026-10-03. Dates are end dates. Computed from AstroSage's own Moon below, so the test checks the dasha arithmetic, not the ephemeris.",
+    "reference_moon": "Aquarius 8:58:26",
+    "mahadasha_ends": [
+      [
+        "Rahu",
+        "2010-06-03"
+      ],
+      [
+        "Jupiter",
+        "2026-06-03"
+      ],
+      [
+        "Saturn",
+        "2045-06-03"
+      ],
+      [
+        "Mercury",
+        "2062-06-03"
+      ],
+      [
+        "Ketu",
+        "2069-06-03"
+      ],
+      [
+        "Venus",
+        "2089-06-03"
+      ],
+      [
+        "Sun",
+        "2095-06-03"
+      ],
+      [
+        "Moon",
+        "2105-06-03"
+      ],
+      [
+        "Mars",
+        "2112-06-03"
+      ]
+    ]
+  }
+}

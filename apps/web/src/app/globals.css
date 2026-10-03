@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+/* The answer sheet: warm bone paper, charcoal print, red pen for marking only. */
+:root {
+  color-scheme: light;
+  --bone: #f7f6f3;
+  --paper: #ffffff;
+  --ink: #111111;
+  --ink-2: #2f3437;
+  --muted: #6b6a66;
+  --rule: #eaeaea;
+  --rule-strong: #d9d8d4;
+  --ruling: #ebe9e3;
+  --pen: #9f2f2d;
+  --pen-bg: #fdebec;
+  --blue: #1f6c9f;
+  --blue-bg: #e1f3fe;
+  --green: #346538;
+  --green-bg: #edf3ec;
+  --amber: #956400;
+  --amber-bg: #fbf3db;
+  --line: 2rem; /* the ruling pitch */
+}
+
+@theme inline {
+  --color-bone: var(--bone);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+  --color-pen: var(--pen);
+  --color-pen-bg: var(--pen-bg);
+  --color-blue: var(--blue);
+  --color-blue-bg: var(--blue-bg);
+  --color-green: var(--green);
+  --color-green-bg: var(--green-bg);
+  --color-amber: var(--amber);
+  --color-amber-bg: var(--amber-bg);
+  --font-sans: var(--font-geist-sans), "Helvetica Neue", sans-serif;
+  --font-mono: var(--font-geist-mono), "SF Mono", monospace;
+  --font-serif: var(--font-instrument-serif), serif;
+  --font-hand: var(--font-kalam), cursive;
+  --font-deva: var(--font-tiro-deva), serif;
+}
+
+body {
+  background: var(--bone);
+  color: var(--ink-2);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--amber-bg);
+  color: var(--ink);
+}
+
+/* Base layer, so components (answer lines) can show focus their own way. */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+input,
+select {
+  caret-color: var(--pen);
+  accent-color: var(--ink);
+}
+
+::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+html {
+  scrollbar-color: var(--rule-strong) var(--bone);
+}
+
+@layer components {
+  /* Display questions: Instrument Serif, tight. */
+  .serif {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: var(--ink);
+  }
+
+  /* Red-pen marking. Never used for body copy. */
+  .pen {
+    font-family: var(--font-hand);
+    color: var(--pen);
+  }
+
+  /* The ruled sheet. */
+  .ruled {
+    background-image: linear-gradient(to bottom, transparent calc(var(--line) - 1px), var(--ruling) calc(var(--line) - 1px));
+    background-size: 100% var(--line);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 6px;
+    background: var(--ink);
+    color: #fff;
+    padding: 0.8rem 1.25rem;
+    font-weight: 500;
+    transition: background-color 200ms, transform 120ms;
+  }
+  .btn:hover {
+    background: #333;
+  }
+  .btn:active {
+    transform: scale(0.98);
+  }
+  .btn:disabled {
+    background: var(--muted);
+    cursor: progress;
+  }
+
+  .link {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--rule-strong);
+    text-underline-offset: 4px;
+    transition: text-decoration-color 200ms;
+  }
+  .link:hover {
+    text-decoration-color: var(--ink);
+  }
+
+  /* An answer written on a line: no box, an ink underline that firms up on focus. */
+  .answer-line {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid var(--rule-strong);
+    background: transparent;
+    padding: 0.35rem 0.1rem;
+    font-size: 1.125rem;
+    color: var(--ink);
+    border-radius: 0;
+    outline: none;
+    transition: border-color 200ms;
+  }
+  .answer-line:focus {
+    border-bottom-color: var(--ink);
+    box-shadow: 0 1px 0 0 var(--ink);
+  }
+  .answer-line[aria-invalid="true"] {
+    border-bottom-color: var(--pen);
+  }
+
+  /* Native date/time pickers, themed to the sheet instead of OS defaults. */
+  .answer-line::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+  .answer-line::-webkit-datetime-edit-text {
+    color: var(--muted);
+    padding: 0 0.15em;
+  }
+  .answer-line::-webkit-calendar-picker-indicator {
+    opacity: 0.45;
+    cursor: pointer;
+    transition: opacity 200ms;
+  }
+  .answer-line:hover::-webkit-calendar-picker-indicator,
+  .answer-line:focus::-webkit-calendar-picker-indicator {
+    opacity: 0.9;
+  }
+  .answer-line:invalid:not(:focus)::-webkit-datetime-edit {
+    color: var(--muted);
+  }
+
+  .pill {
+    display: inline-block;
+    border-radius: 9999px;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0ms !important;
+  }
+}
+
+/* A "Why this?" note opening under its line. */
+@keyframes why-open {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}

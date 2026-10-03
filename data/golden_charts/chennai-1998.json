@@ -1,0 +1,78 @@
+{
+  "id": "chennai-1998",
+  "source": "Planets: Drik Panchang sidereal planetary positions (Lahiri/Chitrapaksha, mean node), fetched 2026-10-03. Ascendant: AstroSage cloud kundli (N.C. Lahiri) entered with exactly the coordinates and UTC offset below. Drik Panchang's ascendant is not used: it runs ahead by about longitude x 0.00274 deg of sidereal time (10-20' for Indian cities).",
+  "notes": "Eight minutes before midnight. Jupiter and Saturn retrograde; Moon, Mars and Saturn debilitated.",
+  "birth": {
+    "date": "1998-08-30",
+    "time": "23:52:00",
+    "tz_name": "Asia/Kolkata",
+    "lat": 13.083333,
+    "lon": 80.283333,
+    "expected_utc_offset": "+05:30",
+    "coordinates_dms": "13°05'N 80°17'E"
+  },
+  "tolerance_arcmin": 1.0,
+  "ascendant_tolerance_arcmin": 1.0,
+  "expected": {
+    "ascendant": "Taurus 17:38:54",
+    "planets": {
+      "Sun": "Leo 13:19:50.64",
+      "Moon": "Scorpio 19:32:14.63",
+      "Mars": "Cancer 12:32:43.62",
+      "Mercury": "Cancer 25:10:50.83",
+      "Jupiter": "Pisces 1:19:02.90",
+      "Venus": "Cancer 27:27:57.68",
+      "Saturn": "Aries 9:35:15.49",
+      "Rahu": "Leo 7:04:47.08",
+      "Ketu": "Aquarius 7:04:47.08"
+    },
+    "nakshatras": {
+      "Moon": [
+        "Jyeshtha",
+        1
+      ]
+    }
+  },
+  "dasha": {
+    "source": "AstroSage cloud kundli, Vimshottari, fetched 2026-10-03. Dates are end dates. Computed from AstroSage's own Moon below, so the test checks the dasha arithmetic, not the ephemeris.",
+    "reference_moon": "Scorpio 19:32:19",
+    "mahadasha_ends": [
+      [
+        "Mercury",
+        "2012-01-01"
+      ],
+      [
+        "Ketu",
+        "2019-01-01"
+      ],
+      [
+        "Venus",
+        "2039-01-01"
+      ],
+      [
+        "Sun",
+        "2045-01-01"
+      ],
+      [
+        "Moon",
+        "2055-01-01"
+      ],
+      [
+        "Mars",
+        "2062-01-01"
+      ],
+      [
+        "Rahu",
+        "2080-01-01"
+      ],
+      [
+        "Jupiter",
+        "2096-01-01"
+      ],
+      [
+        "Saturn",
+        "2115-01-01"
+      ]
+    ]
+  }
+}

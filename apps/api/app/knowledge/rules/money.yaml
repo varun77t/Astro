@@ -1,0 +1,366 @@
+# Money: earning, saving and spending.
+#
+# Houses: 2nd (wealth, savings), 11th (income, gains), 5th and 9th (fortune), 12th (spending,
+# losses). Karakas: Jupiter (wealth), Venus (comforts). Never name a specific investment or
+# purchase; see docs/rule-writing-guide.md.
+
+area: money
+title: Money
+summary:
+  supportive: Your chart is good for money. Income comes and you can keep it.
+  mixed: Your chart has real earning strengths, and real leaks.
+  cautionary: Money is a weak area in your chart. Earning takes effort, and holding on to it takes more.
+  quiet: Nothing in your chart marks money out, for good or bad.
+disclaimer: Themes from tradition, not financial advice.
+
+rules:
+  # ------------------------------------------------------------------- the 2nd house
+  - id: MON-2H-JUP
+    title: Jupiter in the 2nd house
+    when: {planet: Jupiter, house: 2}
+    effect: Money comes steadily and you keep it. A classic placement for wealth built over time.
+    tone: supportive
+    weight: 0.7
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Jupiter: Taurus}
+
+  - id: MON-2H-VEN
+    title: Venus in the 2nd house
+    when: {planet: Venus, house: 2}
+    effect: Comfort and good taste. You earn through beauty, food, art or people, and spend on the good life.
+    tone: supportive
+    weight: 0.6
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Venus: Taurus}
+
+  - id: MON-2H-MER
+    title: Mercury in the 2nd house
+    when: {planet: Mercury, house: 2}
+    effect: You earn through words, numbers, trade or advice.
+    tone: supportive
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Mercury: Taurus}
+
+  - id: MON-2H-MOO
+    title: The Moon in the 2nd house
+    when: {planet: Moon, house: 2}
+    effect: Income rises and falls in waves, but recovers. Family supports you with money.
+    tone: neutral
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Moon: Taurus}
+
+  - id: MON-2H-SUN
+    title: The Sun in the 2nd house
+    when: {planet: Sun, house: 2}
+    effect: Proud of money you earn yourself. Family money is not something to count on.
+    tone: neutral
+    weight: 0.4
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Sun: Taurus}
+
+  - id: MON-2H-MAR
+    title: Mars in the 2nd house
+    when: {planet: Mars, house: 2}
+    effect: You earn fast and spend fast. Impulsive purchases and arguments over family money are a pattern.
+    tone: cautionary
+    weight: 0.4
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Mars: Taurus}
+
+  - id: MON-2H-SAT
+    title: Saturn in the 2nd house
+    when: {planet: Saturn, house: 2}
+    effect: Money is tight early in life. Savings build slowly and carefully, and you get there late.
+    tone: cautionary
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries}
+
+  - id: MON-2H-RAH
+    title: Rahu in the 2nd house
+    when: {planet: Rahu, house: 2}
+    effect: Income from unusual sources, with big swings. Money comes suddenly and goes the same way.
+    tone: cautionary
+    weight: 0.4
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Rahu: Taurus}
+
+  - id: MON-2H-KET
+    title: Ketu in the 2nd house
+    when: {planet: Ketu, house: 2}
+    effect: You care less about money than most, and it shows in your savings.
+    tone: cautionary
+    weight: 0.3
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Ketu: Taurus}
+
+  - id: MON-2L-STRONG
+    title: Ruler of the 2nd house is strong
+    when: {lord_of: 2, dignity: strong}
+    effect: A solid base of wealth. You save well and your assets grow.
+    tone: supportive
+    weight: 0.7
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: mon-2l-dignity
+    test: {lagna: Aries, Venus: Pisces}
+
+  - id: MON-2L-WEAK
+    title: Ruler of the 2nd house is debilitated
+    when: {lord_of: 2, dignity: weak}
+    effect: Saving is hard for you. Money slips away unless you lock it up first.
+    tone: cautionary
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: mon-2l-dignity
+    test: {lagna: Aries, Venus: Virgo}
+
+  - id: MON-2L-11H
+    title: Ruler of the 2nd house in the 11th
+    when: {lord_of: 2, house: 11}
+    effect: Savings and income feed each other. A good placement for building wealth.
+    tone: supportive
+    weight: 0.7
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: mon-2l-place
+    test: {lagna: Aries, Venus: Aquarius}
+
+  - id: MON-2L-12H
+    title: Ruler of the 2nd house in the 12th
+    when: {lord_of: 2, house: 12}
+    effect: Savings drain away, on others, on travel or on things you didn't plan for.
+    tone: cautionary
+    weight: 0.5
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: mon-2l-place
+    test: {lagna: Aries, Venus: Pisces}
+
+  - id: MON-2L-DUSTHANA
+    title: Ruler of the 2nd house in the 6th or 8th
+    when: {lord_of: 2, house: [6, 8]}
+    effect: Money comes with ups and downs, debts or disputes. Keep a cushion.
+    tone: cautionary
+    weight: 0.4
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: mon-2l-place
+    test: {lagna: Aries, Venus: Scorpio}
+
+  # ------------------------------------------------------------------ the 11th house
+  - id: MON-11H-BENEFIC
+    title: A benefic in the 11th house
+    when: {house: 11, has: [Jupiter, Venus, Mercury]}
+    effect: Gains come readily, and so does a network that helps you earn.
+    tone: supportive
+    weight: 0.7
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Jupiter: Aquarius}
+
+  - id: MON-11H-HARD
+    title: A hard planet in the 11th house
+    when: {house: 11, has: [Sun, Mars, Saturn, Rahu]}
+    effect: Ambition turns into income. Persistence and contacts make you money; hard planets do well here.
+    tone: supportive
+    weight: 0.6
+    source: Upachaya houses (BPHS, paraphrased)
+    test: {lagna: Aries, Saturn: Aquarius}
+
+  - id: MON-11L-STRONG
+    title: Ruler of the 11th house is strong
+    when: {lord_of: 11, dignity: strong}
+    effect: Income is strong in your chart. Your efforts pay.
+    tone: supportive
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: mon-11l-dignity
+    test: {lagna: Aries, Saturn: Libra}
+
+  - id: MON-11L-WEAK
+    title: Ruler of the 11th house is debilitated
+    when: {lord_of: 11, dignity: weak}
+    effect: Income doesn't match your effort. Raises and returns come slower than they should.
+    tone: cautionary
+    weight: 0.5
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: mon-11l-dignity
+    test: {lagna: Aries, Saturn: Aries}
+
+  - id: MON-11L-2H
+    title: Ruler of the 11th house in the 2nd
+    when: {lord_of: 11, house: 2}
+    effect: What you earn, you keep. Income turns into savings.
+    tone: supportive
+    weight: 0.7
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: mon-11l-place
+    test: {lagna: Aries}
+
+  - id: MON-11L-12H
+    title: Ruler of the 11th house in the 12th
+    when: {lord_of: 11, house: 12}
+    effect: Money goes out as fast as it comes in. Expenses keep pace with income.
+    tone: cautionary
+    weight: 0.5
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: mon-11l-place
+    test: {lagna: Aries, Saturn: Pisces}
+
+  # ------------------------------------------------------------------- dhana yogas
+  - id: MON-DHANA-2-11
+    title: Rulers of the 2nd and 11th houses together
+    when: {lord_of: 2, with_lord_of: 11}
+    effect: Dhana yoga. Income and savings support each other, a classic sign of wealth.
+    tone: supportive
+    weight: 0.8
+    source: Dhana yoga (BPHS, paraphrased)
+    group: mon-dhana
+    test: {lagna: Aries, Venus: Aquarius 10, Saturn: Aquarius 20}
+
+  - id: MON-DHANA-2-11-EXCHANGE
+    title: Rulers of the 2nd and 11th houses exchange signs
+    when: {exchange: [2, 11]}
+    effect: Dhana yoga through an exchange. Income and savings feed each other.
+    tone: supportive
+    weight: 0.8
+    source: Dhana yoga; parivartana (BPHS, paraphrased)
+    group: mon-dhana
+    test: {lagna: Aries, Venus: Aquarius, Saturn: Taurus}
+
+  - id: MON-DHANA-FORTUNE
+    title: A wealth house linked to a house of fortune
+    when:
+      any:
+        - {lord_of: 2, with_lord_of: 5}
+        - {lord_of: 2, with_lord_of: 9}
+        - {lord_of: 11, with_lord_of: 5}
+        - {lord_of: 11, with_lord_of: 9}
+    effect: Dhana yoga. Luck and money are linked in your chart, and effort pays off more than usual.
+    tone: supportive
+    weight: 0.8
+    source: Dhana yoga (BPHS, paraphrased)
+    group: mon-dhana-fortune
+    test: {lagna: Aries, Sun: Sagittarius 10, Venus: Sagittarius 25}
+
+  - id: MON-LAKSHMI
+    title: Lakshmi yoga
+    when:
+      all:
+        - {lord_of: 9, dignity: strong, house: [kendra, trikona]}
+        - {lord_of: 1, dignity: [exalted, moolatrikona, own, friendly]}
+    effect: Lakshmi yoga, a classic mark of prosperity and comfort.
+    tone: supportive
+    weight: 0.9
+    source: Named yoga (Phaladeepika, paraphrased)
+    test: {lagna: Aries, Jupiter: Cancer, Mars: Capricorn}
+
+  - id: MON-1L-WEALTH
+    title: Ruler of the 1st house in the 2nd or 11th
+    when: {lord_of: 1, house: [2, 11]}
+    effect: You take earning into your own hands, and it works.
+    tone: supportive
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    test: {lagna: Aries, Mars: Aquarius}
+
+  # ------------------------------------------------------------- spending and the 12th
+  - id: MON-12H-VEN
+    title: Venus in the 12th house
+    when: {planet: Venus, house: 12}
+    effect: You spend freely on comfort, travel and pleasure. Enjoyable, and expensive.
+    tone: neutral
+    weight: 0.4
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Venus: Pisces}
+
+  - id: MON-8H-JUP
+    title: Jupiter in the 8th house
+    when: {planet: Jupiter, house: 8}
+    effect: Money through others plays a part, like a partner's income, family wealth or insurance.
+    tone: neutral
+    weight: 0.4
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Jupiter: Scorpio}
+
+  # ------------------------------------------------------------------- key planets
+  - id: MON-JUP-STRONG
+    title: Jupiter is strong
+    when: {planet: Jupiter, dignity: strong}
+    effect: Jupiter, the planet of wealth, is strong. Opportunity finds you, and money grows over time.
+    tone: supportive
+    weight: 0.6
+    source: Karaka reading (BPHS, paraphrased)
+    group: mon-jup
+    test: {lagna: Aries, Jupiter: Cancer}
+
+  - id: MON-JUP-WEAK
+    title: Jupiter is debilitated
+    when: {planet: Jupiter, dignity: weak}
+    effect: Jupiter, the planet of wealth, is weak. Bad financial advice and misplaced trust cost you; check before you commit.
+    tone: cautionary
+    weight: 0.5
+    source: Karaka reading (BPHS, paraphrased)
+    group: mon-jup
+    test: {lagna: Aries, Jupiter: Capricorn}
+
+  - id: MON-VEN-STRONG
+    title: Venus is strong
+    when: {planet: Venus, dignity: strong}
+    effect: Comfort comes your way, along with a good eye for value.
+    tone: supportive
+    weight: 0.5
+    source: Karaka reading (BPHS, paraphrased)
+    test: {lagna: Aries, Venus: Pisces}
+
+  # ----------------------------------------------------------------- the running period
+  - id: MON-DASHA-RULES
+    title: Your main period's planet rules wealth or gains
+    when: {period: maha, rules: [2, 11]}
+    effect: Money is in focus this period. Income rises and savings grow.
+    tone: supportive
+    weight: 0.7
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: mon-period-maha
+    test: {lagna: Aries, period: {maha: Venus}}
+
+  - id: MON-DASHA-IN
+    title: Your main period's planet sits in the 2nd or 11th house
+    when: {period: maha, house: [2, 11]}
+    effect: A period of gains. Money comes in more easily than before.
+    tone: supportive
+    weight: 0.5
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: mon-period-maha
+    test: {lagna: Aries, period: {maha: Moon}}
+
+  - id: MON-DASHA-SPEND
+    title: Your main period's planet rules the 12th house
+    when:
+      all:
+        - {period: maha, rules: 12}
+        - {not: {period: maha, rules: [2, 11]}}
+    effect: Expenses rise this period, and some losses are likely. Plan big spending ahead.
+    tone: cautionary
+    weight: 0.4
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: mon-period-maha
+    test: {lagna: Aries, period: {maha: Jupiter}}
+
+  - id: MON-DASHA-QUIET
+    title: Your main period and money
+    when: {period: maha}
+    effect: Your current period isn't tied to money, for better or worse.
+    tone: neutral
+    weight: 0.1
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: mon-period-maha
+    test: {lagna: Aries, period: {maha: Sun}}
+
+  - id: MON-DASHA-ANTAR
+    title: Your sub-period's planet rules wealth or gains
+    when: {period: antar, rules: [2, 11]}
+    effect: The current sub-period brings money matters to the front, with gains.
+    tone: supportive
+    weight: 0.5
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: mon-period-antar
+    test: {lagna: Aries, period: {maha: Sun, antar: Saturn}}

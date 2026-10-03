@@ -1,0 +1,78 @@
+{
+  "id": "bengaluru-1990",
+  "source": "Planets: Drik Panchang sidereal planetary positions (Lahiri/Chitrapaksha, mean node), fetched 2026-10-03. Ascendant: AstroSage cloud kundli (N.C. Lahiri) entered with exactly the coordinates and UTC offset below. Drik Panchang's ascendant is not used: it runs ahead by about longitude x 0.00274 deg of sidereal time (10-20' for Indian cities).",
+  "notes": "Ordinary modern Indian birth. Venus exalted, Saturn retrograde in own sign.",
+  "birth": {
+    "date": "1990-05-17",
+    "time": "14:35:00",
+    "tz_name": "Asia/Kolkata",
+    "lat": 12.966667,
+    "lon": 77.583333,
+    "expected_utc_offset": "+05:30",
+    "coordinates_dms": "12°58'N 77°35'E"
+  },
+  "tolerance_arcmin": 1.0,
+  "ascendant_tolerance_arcmin": 1.0,
+  "expected": {
+    "ascendant": "Virgo 4:55:19",
+    "planets": {
+      "Sun": "Taurus 2:28:38.67",
+      "Moon": "Capricorn 27:07:43.49",
+      "Mars": "Aquarius 25:59:56.30",
+      "Mercury": "Aries 14:11:26.92",
+      "Jupiter": "Gemini 16:10:12.42",
+      "Venus": "Pisces 21:14:04.05",
+      "Saturn": "Capricorn 1:29:07.90",
+      "Rahu": "Capricorn 17:30:25.51",
+      "Ketu": "Cancer 17:30:25.51"
+    },
+    "nakshatras": {
+      "Moon": [
+        "Dhanishta",
+        2
+      ]
+    }
+  },
+  "dasha": {
+    "source": "AstroSage cloud kundli, Vimshottari, fetched 2026-10-03. Dates are end dates. Computed from AstroSage's own Moon below, so the test checks the dasha arithmetic, not the ephemeris.",
+    "reference_moon": "Capricorn 27:07:32",
+    "mahadasha_ends": [
+      [
+        "Mars",
+        "1995-05-20"
+      ],
+      [
+        "Rahu",
+        "2013-05-20"
+      ],
+      [
+        "Jupiter",
+        "2029-05-20"
+      ],
+      [
+        "Saturn",
+        "2048-05-20"
+      ],
+      [
+        "Mercury",
+        "2065-05-20"
+      ],
+      [
+        "Ketu",
+        "2072-05-20"
+      ],
+      [
+        "Venus",
+        "2092-05-20"
+      ],
+      [
+        "Sun",
+        "2098-05-20"
+      ],
+      [
+        "Moon",
+        "2108-05-20"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "kolkata-2010",
+  "source": "Planets: Drik Panchang sidereal planetary positions (Lahiri/Chitrapaksha, mean node), fetched 2026-10-03. Ascendant: AstroSage cloud kundli (N.C. Lahiri) entered with exactly the coordinates and UTC offset below. Drik Panchang's ascendant is not used: it runs ahead by about longitude x 0.00274 deg of sidereal time (10-20' for Indian cities).",
+  "notes": "Ascendant 1 deg 47' from the end of Sagittarius, Moon 44' from the end of Capricorn, Sun 1 deg 07' into Aquarius. Mars and Saturn retrograde.",
+  "birth": {
+    "date": "2010-02-14",
+    "time": "04:15:00",
+    "tz_name": "Asia/Kolkata",
+    "lat": 22.566667,
+    "lon": 88.366667,
+    "expected_utc_offset": "+05:30",
+    "coordinates_dms": "22°34'N 88°22'E"
+  },
+  "tolerance_arcmin": 1.0,
+  "ascendant_tolerance_arcmin": 1.0,
+  "expected": {
+    "ascendant": "Sagittarius 28:12:49",
+    "planets": {
+      "Sun": "Aquarius 1:07:11.35",
+      "Moon": "Capricorn 29:16:11.30",
+      "Mars": "Cancer 10:12:58.83",
+      "Mercury": "Capricorn 11:07:48.89",
+      "Jupiter": "Aquarius 12:14:09.67",
+      "Venus": "Aquarius 9:03:11.06",
+      "Saturn": "Virgo 9:47:41.72",
+      "Rahu": "Sagittarius 25:17:54.61",
+      "Ketu": "Gemini 25:17:54.61"
+    },
+    "nakshatras": {
+      "Moon": [
+        "Dhanishta",
+        2
+      ]
+    }
+  },
+  "dasha": {
+    "source": "AstroSage cloud kundli, Vimshottari, fetched 2026-10-03. Dates are end dates. Computed from AstroSage's own Moon below, so the test checks the dasha arithmetic, not the ephemeris.",
+    "reference_moon": "Capricorn 29:15:59",
+    "mahadasha_ends": [
+      [
+        "Mars",
+        "2014-01-02"
+      ],
+      [
+        "Rahu",
+        "2032-01-02"
+      ],
+      [
+        "Jupiter",
+        "2048-01-02"
+      ],
+      [
+        "Saturn",
+        "2067-01-02"
+      ],
+      [
+        "Mercury",
+        "2084-01-02"
+      ],
+      [
+        "Ketu",
+        "2091-01-02"
+      ],
+      [
+        "Venus",
+        "2111-01-02"
+      ],
+      [
+        "Sun",
+        "2117-01-02"
+      ],
+      [
+        "Moon",
+        "2127-01-02"
+      ]
+    ]
+  }
+}

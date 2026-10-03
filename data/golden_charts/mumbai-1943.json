@@ -1,0 +1,78 @@
+{
+  "id": "mumbai-1943",
+  "source": "Planets: Drik Panchang sidereal planetary positions (Lahiri/Chitrapaksha, mean node), fetched 2026-10-03. Ascendant: AstroSage cloud kundli (N.C. Lahiri) entered with exactly the coordinates and UTC offset below. Drik Panchang's ascendant is not used: it runs ahead by about longitude x 0.00274 deg of sidereal time (10-20' for Indian cities).",
+  "notes": "Wartime India (+06:30). Venus 9' and Jupiter 55' into Cancer: two planets just past a sign boundary.",
+  "birth": {
+    "date": "1943-06-01",
+    "time": "12:00:00",
+    "tz_name": "Asia/Kolkata",
+    "lat": 19.066667,
+    "lon": 72.883333,
+    "expected_utc_offset": "+06:30",
+    "coordinates_dms": "19°04'N 72°53'E"
+  },
+  "tolerance_arcmin": 1.0,
+  "ascendant_tolerance_arcmin": 1.0,
+  "expected": {
+    "ascendant": "Cancer 24:15:05",
+    "planets": {
+      "Sun": "Taurus 16:47:05.03",
+      "Moon": "Aries 26:53:28.10",
+      "Mars": "Pisces 10:30:34.59",
+      "Mercury": "Taurus 4:28:03.36",
+      "Jupiter": "Cancer 0:55:35.61",
+      "Venus": "Cancer 0:09:02.98",
+      "Saturn": "Taurus 22:05:34.98",
+      "Rahu": "Cancer 26:26:04.44",
+      "Ketu": "Capricorn 26:26:04.44"
+    },
+    "nakshatras": {
+      "Moon": [
+        "Krittika",
+        1
+      ]
+    }
+  },
+  "dasha": {
+    "source": "AstroSage cloud kundli, Vimshottari, fetched 2026-10-03. Dates are end dates. Computed from AstroSage's own Moon below, so the test checks the dasha arithmetic, not the ephemeris.",
+    "reference_moon": "Aries 26:54:11",
+    "mahadasha_ends": [
+      [
+        "Sun",
+        "1949-04-23"
+      ],
+      [
+        "Moon",
+        "1959-04-23"
+      ],
+      [
+        "Mars",
+        "1966-04-23"
+      ],
+      [
+        "Rahu",
+        "1984-04-23"
+      ],
+      [
+        "Jupiter",
+        "2000-04-23"
+      ],
+      [
+        "Saturn",
+        "2019-04-23"
+      ],
+      [
+        "Mercury",
+        "2036-04-23"
+      ],
+      [
+        "Ketu",
+        "2043-04-23"
+      ],
+      [
+        "Venus",
+        "2063-04-23"
+      ]
+    ]
+  }
+}

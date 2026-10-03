@@ -1,0 +1,557 @@
+# Career: work, status and the kind of field that fits.
+#
+# Houses: 10th (karma, reputation), 6th (service, competition), 7th (business), 11th (gains),
+# 3rd (initiative). Karakas: Sun (authority), Saturn (work, discipline), Mercury (commerce),
+# Mars (technical), Jupiter (advisory). Write frankly; see docs/rule-writing-guide.md.
+
+area: career
+title: Career
+summary:
+  supportive: Your chart is strong for career and standing.
+  mixed: Your chart gives you real career strengths, and some real obstacles.
+  cautionary: Career is an uphill area in your chart. Progress comes late and through persistence.
+  quiet: Nothing in your chart marks career out, for good or bad.
+
+rules:
+  # ---------------------------------------------------------- planets in the 10th house
+  - id: CAR-10H-SUN
+    title: The Sun in the 10th house
+    when: {planet: Sun, house: 10}
+    effect: One of the strongest placements for career. Authority, leadership and government or senior roles suit you.
+    tone: supportive
+    weight: 0.8
+    source: Parashari house reading; directional strength (BPHS, paraphrased)
+    test: {lagna: Aries, Sun: Capricorn}
+
+  - id: CAR-10H-MOO
+    title: The Moon in the 10th house
+    when: {planet: Moon, house: 10}
+    effect: A public-facing career, in care, hospitality, people or the public. Your career changes direction more than once.
+    tone: neutral
+    weight: 0.6
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Moon: Capricorn}
+
+  - id: CAR-10H-MAR
+    title: Mars in the 10th house
+    when: {planet: Mars, house: 10}
+    effect: Drive and ambition at work. Engineering, technical, defence, sport or property suit you; clashes with bosses are common.
+    tone: supportive
+    weight: 0.7
+    source: Parashari house reading; directional strength (BPHS, paraphrased)
+    test: {lagna: Aries, Mars: Capricorn}
+
+  - id: CAR-10H-MER
+    title: Mercury in the 10th house
+    when: {planet: Mercury, house: 10}
+    effect: Commerce, communication, writing, IT and analysis suit you. You juggle more than one line of work.
+    tone: supportive
+    weight: 0.7
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Mercury: Capricorn}
+
+  - id: CAR-10H-JUP
+    title: Jupiter in the 10th house
+    when: {planet: Jupiter, house: 10}
+    effect: Respect at work. Teaching, law, advisory roles and finance suit you.
+    tone: supportive
+    weight: 0.7
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Jupiter: Capricorn}
+
+  - id: CAR-10H-VEN
+    title: Venus in the 10th house
+    when: {planet: Venus, house: 10}
+    effect: Arts, design, fashion, media and hospitality suit you. You do well where charm and taste count.
+    tone: supportive
+    weight: 0.6
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Venus: Capricorn}
+
+  - id: CAR-10H-SAT
+    title: Saturn in the 10th house
+    when: {planet: Saturn, house: 10}
+    effect: A slow, hard climb. Recognition comes late, but what you build lasts. Large organisations and structured fields suit you.
+    tone: neutral
+    weight: 0.7
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Saturn: Capricorn}
+
+  - id: CAR-10H-RAH
+    title: Rahu in the 10th house
+    when: {planet: Rahu, house: 10}
+    effect: Big ambition and unconventional routes, like tech or foreign companies. Sudden rises, and sudden falls, are part of the pattern.
+    tone: neutral
+    weight: 0.6
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Rahu: Capricorn}
+
+  - id: CAR-10H-KET
+    title: Ketu in the 10th house
+    when: {planet: Ketu, house: 10}
+    effect: Status doesn't satisfy you. You drift between jobs until you find specialised or behind-the-scenes work that means something.
+    tone: neutral
+    weight: 0.5
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Ketu: Capricorn}
+
+  - id: CAR-AMALA
+    title: Amala yoga
+    when: {house: 10, has: [Jupiter, Venus, Mercury]}
+    effect: Amala yoga. A clean reputation through your work, and people speak well of you.
+    tone: supportive
+    weight: 0.6
+    source: Named yoga (Phaladeepika, paraphrased)
+    test: {lagna: Aries, Venus: Capricorn}
+
+  - id: CAR-10H-JUP-ASPECT
+    title: Jupiter aspects the 10th house
+    when: {house: 10, aspected_by: Jupiter}
+    effect: Jupiter protects your career. Good mentors and goodwill at work come your way.
+    tone: supportive
+    weight: 0.5
+    source: Graha drishti (BPHS, paraphrased)
+    test: {lagna: Aries, Jupiter: Taurus}
+
+  - id: CAR-10H-SAT-ASPECT
+    title: Saturn aspects the 10th house
+    when: {house: 10, aspected_by: Saturn}
+    effect: Saturn slows your career. Promotions take longer than they should, and you carry more responsibility than you get credit for.
+    tone: cautionary
+    weight: 0.4
+    source: Graha drishti (BPHS, paraphrased)
+    test: {lagna: Aries, Saturn: Cancer}
+
+  # ------------------------------------------------------------------ the 10th house lord
+  - id: CAR-10L-STRONG
+    title: Ruler of the 10th house is strong
+    when: {lord_of: 10, dignity: strong}
+    effect: A strong career in your chart. You rise in your field and are known for your work.
+    tone: supportive
+    weight: 0.8
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: car-10l-dignity
+    test: {lagna: Aries, Saturn: Libra}
+
+  - id: CAR-10L-WEAK
+    title: Ruler of the 10th house is debilitated
+    when: {lord_of: 10, dignity: weak}
+    effect: Career is a weak point. Setbacks, wrong turns and jobs below your ability are likely before things settle.
+    tone: cautionary
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: car-10l-dignity
+    test: {lagna: Aries, Saturn: Aries}
+
+  - id: CAR-10L-GOOD-HOUSE
+    title: Ruler of the 10th house in an angle or trine
+    when: {lord_of: 10, house: [4, 5, 7, 9, 10]}
+    effect: Your work and the rest of your life pull in the same direction. Career builds steadily.
+    tone: supportive
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: car-10l-place
+    test: {lagna: Aries, Saturn: Leo}
+
+  - id: CAR-10L-1H
+    title: Ruler of the 10th house in the 1st
+    when: {lord_of: 10, house: 1}
+    effect: Self-made. Your career is your identity, and you do best working on your own terms.
+    tone: supportive
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: car-10l-place
+    test: {lagna: Aries, Saturn: Aries}
+
+  - id: CAR-10L-11H
+    title: Ruler of the 10th house in the 11th
+    when: {lord_of: 10, house: 11}
+    effect: Work pays. Your career brings good income and a useful network.
+    tone: supportive
+    weight: 0.7
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: car-10l-place
+    test: {lagna: Taurus, Saturn: Pisces}
+
+  - id: CAR-10L-6H
+    title: Ruler of the 10th house in the 6th
+    when: {lord_of: 10, house: 6}
+    effect: Service, competitive jobs, law, medicine or anything with daily problem-solving. You work hard under others for a long time.
+    tone: neutral
+    weight: 0.5
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: car-10l-place
+    test: {lagna: Aries, Saturn: Virgo}
+
+  - id: CAR-10L-8H
+    title: Ruler of the 10th house in the 8th
+    when: {lord_of: 10, house: 8}
+    effect: An unstable career with sudden breaks or changes. Research, investigation or behind-the-scenes work suit you.
+    tone: cautionary
+    weight: 0.5
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: car-10l-place
+    test: {lagna: Aries, Saturn: Scorpio}
+
+  - id: CAR-10L-12H
+    title: Ruler of the 10th house in the 12th
+    when: {lord_of: 10, house: 12}
+    effect: Work abroad, in large institutions, or away from the public eye. Recognition at home is hard to come by.
+    tone: neutral
+    weight: 0.5
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: car-10l-place
+    test: {lagna: Aries, Saturn: Pisces}
+
+  - id: CAR-10L-COMBUST
+    title: Ruler of the 10th house is combust
+    when:
+      all:
+        - {lord_of: 10, combust: true}
+        - {not: {lord_of: 10, is: Sun}}
+    effect: Your work goes unseen. Others take the credit unless you speak up for it.
+    tone: cautionary
+    weight: 0.4
+    source: Combustion (common teaching)
+    test: {lagna: Aries, Sun: Sagittarius 10, Saturn: Sagittarius 15}
+
+  - id: CAR-10L-RETRO
+    title: Ruler of the 10th house is retrograde
+    when: {lord_of: 10, retrograde: true}
+    effect: You change course or return to old work before settling. The path is indirect.
+    tone: neutral
+    weight: 0.3
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Saturn: "Taurus 15 R"}
+
+  - id: CAR-10L-VARGOTTAMA
+    title: Ruler of the 10th house keeps its sign in the navamsa
+    when: {lord_of: 10, vargottama: true}
+    effect: Once you find your direction, it holds. Career is stable.
+    tone: supportive
+    weight: 0.4
+    source: Vargottama (common teaching)
+    test: {lagna: Aries, Saturn: Capricorn 1}
+
+  # ---------------------------------------------- what the 10th lord says about the field
+  - id: CAR-FIELD-SUN
+    title: The Sun rules your 10th house
+    when: {lord_of: 10, is: Sun}
+    effect: Fields of authority suit you, like government, administration or management.
+    tone: neutral
+    weight: 0.45
+    source: Parashari house-lord principle (common teaching)
+    group: car-field
+    test: {lagna: Scorpio}
+
+  - id: CAR-FIELD-MOO
+    title: The Moon rules your 10th house
+    when: {lord_of: 10, is: Moon}
+    effect: Fields that serve the public suit you, like care, hospitality, food or anything people-facing.
+    tone: neutral
+    weight: 0.45
+    source: Parashari house-lord principle (common teaching)
+    group: car-field
+    test: {lagna: Libra}
+
+  - id: CAR-FIELD-MAR
+    title: Mars rules your 10th house
+    when: {lord_of: 10, is: Mars}
+    effect: Technical and active fields suit you, like engineering, defence, sport, police or property.
+    tone: neutral
+    weight: 0.45
+    source: Parashari house-lord principle (common teaching)
+    group: car-field
+    test: {lagna: Cancer}
+
+  - id: CAR-FIELD-MER
+    title: Mercury rules your 10th house
+    when: {lord_of: 10, is: Mercury}
+    effect: Fields of trade and communication suit you, like business, IT, media, writing or accounts.
+    tone: neutral
+    weight: 0.45
+    source: Parashari house-lord principle (common teaching)
+    group: car-field
+    test: {lagna: Virgo}
+
+  - id: CAR-FIELD-JUP
+    title: Jupiter rules your 10th house
+    when: {lord_of: 10, is: Jupiter}
+    effect: Fields of knowledge and counsel suit you, like teaching, law, finance or advisory work.
+    tone: neutral
+    weight: 0.45
+    source: Parashari house-lord principle (common teaching)
+    group: car-field
+    test: {lagna: Gemini}
+
+  - id: CAR-FIELD-VEN
+    title: Venus rules your 10th house
+    when: {lord_of: 10, is: Venus}
+    effect: Creative and refined fields suit you, like arts, design, fashion, media or hospitality.
+    tone: neutral
+    weight: 0.45
+    source: Parashari house-lord principle (common teaching)
+    group: car-field
+    test: {lagna: Leo}
+
+  - id: CAR-FIELD-SAT
+    title: Saturn rules your 10th house
+    when: {lord_of: 10, is: Saturn}
+    effect: Structured, long-haul fields suit you, like large organisations, public works, operations or manufacturing.
+    tone: neutral
+    weight: 0.45
+    source: Parashari house-lord principle (common teaching)
+    group: car-field
+    test: {lagna: Aries}
+
+  # --------------------------------------------------------------- links between houses
+  - id: CAR-1L-10H
+    title: Ruler of the 1st house in the 10th
+    when: {lord_of: 1, house: 10}
+    effect: You are known by your work. Ambition comes naturally and you push for a visible role.
+    tone: supportive
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    test: {lagna: Aries, Mars: Capricorn}
+
+  - id: CAR-9L-10L
+    title: Rulers of the 9th and 10th houses together
+    when: {lord_of: 9, with_lord_of: 10}
+    effect: Dharma-Karma yoga, one of the best links for career. Luck and work move together, and you rise.
+    tone: supportive
+    weight: 0.9
+    source: Named yoga (BPHS, paraphrased)
+    group: car-9-10
+    test: {lagna: Aries, Jupiter: Capricorn 10, Saturn: Capricorn 20}
+
+  - id: CAR-9-10-EXCHANGE
+    title: Rulers of the 9th and 10th houses exchange signs
+    when: {exchange: [9, 10]}
+    effect: Dharma-Karma yoga through an exchange. Luck and work feed each other, and you rise.
+    tone: supportive
+    weight: 0.9
+    source: Named yoga; parivartana (BPHS, paraphrased)
+    group: car-9-10
+    test: {lagna: Aries, Jupiter: Capricorn, Saturn: Sagittarius}
+
+  - id: CAR-RAJA
+    title: Raja yoga
+    when:
+      any:
+        - {lord_of: 1, with_lord_of: 5}
+        - {lord_of: 1, with_lord_of: 9}
+        - {lord_of: 4, with_lord_of: 5}
+        - {lord_of: 4, with_lord_of: 9}
+        - {lord_of: 7, with_lord_of: 5}
+        - {lord_of: 7, with_lord_of: 9}
+        - {lord_of: 10, with_lord_of: 5}
+    effect: Raja yoga. A link between the houses of power and fortune that lifts your status over time.
+    tone: supportive
+    weight: 0.8
+    source: Raja yoga, kendra-trikona lords (BPHS, paraphrased)
+    group: car-raja
+    test: {lagna: Aries, Mars: Sagittarius 20, Jupiter: Sagittarius 25}
+
+  - id: CAR-YOGAKARAKA
+    title: Your yogakaraka is well placed
+    needs: lagna
+    when:
+      any:
+        - all: [{lagna: [Taurus, Libra]}, {planet: Saturn, house: [kendra, trikona]}]
+        - all: [{lagna: [Cancer, Leo]}, {planet: Mars, house: [kendra, trikona]}]
+        - all: [{lagna: [Capricorn, Aquarius]}, {planet: Venus, house: [kendra, trikona]}]
+    effect: Your chart's yogakaraka, the one planet that rules both an angle and a trine, is well placed. It is a strong sign for rising in life.
+    tone: supportive
+    weight: 0.8
+    source: Yogakaraka (BPHS, paraphrased)
+    test: {lagna: Taurus, Saturn: Aquarius}
+
+  - id: CAR-7L-10H
+    title: Ruler of the 7th house in the 10th
+    when: {lord_of: 7, house: 10}
+    effect: Partnerships drive your career. Business, consulting or client-facing work suit you.
+    tone: neutral
+    weight: 0.5
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    test: {lagna: Aries, Venus: Capricorn}
+
+  - id: CAR-7H-MER
+    title: Mercury in the 7th house
+    when: {planet: Mercury, house: 7}
+    effect: Good at trade and dealing with people. Business and partnerships suit you.
+    tone: supportive
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Mercury: Libra}
+
+  - id: CAR-6L-10H
+    title: Ruler of the 6th house in the 10th
+    when: {lord_of: 6, house: 10}
+    effect: You do better in a job than in business. Service, law, healthcare or competitive roles suit you; workplace rivalry is constant.
+    tone: neutral
+    weight: 0.4
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    test: {lagna: Aries, Mercury: Capricorn}
+
+  # --------------------------------------------------------- effort, competition, gains
+  - id: CAR-3H-MALEFIC
+    title: A hard planet in the 3rd house
+    when: {house: 3, has: [Sun, Mars, Saturn, Rahu]}
+    effect: Courage and initiative. You make your own opportunities instead of waiting for them.
+    tone: supportive
+    weight: 0.5
+    source: Upachaya houses (BPHS, paraphrased)
+    test: {lagna: Aries, Mars: Gemini}
+
+  - id: CAR-6H-MALEFIC
+    title: A hard planet in the 6th house
+    when: {house: 6, has: [Sun, Mars, Saturn, Rahu]}
+    effect: You beat competition and handle pressure well. Rivals don't last against you.
+    tone: supportive
+    weight: 0.5
+    source: Upachaya houses (BPHS, paraphrased)
+    test: {lagna: Aries, Saturn: Virgo}
+
+  - id: CAR-11H-SAT
+    title: Saturn in the 11th house
+    when: {planet: Saturn, house: 11}
+    effect: Gains come slowly from long-term work. Your network is small but lasts.
+    tone: supportive
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Saturn: Aquarius}
+
+  - id: CAR-RAHU-UPACHAYA
+    title: Rahu in the 3rd, 6th or 11th house
+    when: {planet: Rahu, house: [3, 6, 11]}
+    effect: Ambition that grows with time. Unconventional routes work for you, and you outmanoeuvre others.
+    tone: supportive
+    weight: 0.5
+    source: Upachaya houses (common teaching)
+    test: {lagna: Aries, Rahu: Aquarius}
+
+  # ------------------------------------------------------------------- key planets
+  - id: CAR-SUN-STRONG
+    title: The Sun is strong
+    when: {planet: Sun, dignity: strong}
+    effect: Natural authority. People accept your lead, and senior roles come to you.
+    tone: supportive
+    weight: 0.6
+    source: Karaka reading (BPHS, paraphrased)
+    group: car-sun
+    test: {lagna: Aries, Sun: Aries}
+
+  - id: CAR-SUN-WEAK
+    title: The Sun is debilitated
+    when: {planet: Sun, dignity: weak}
+    effect: Trouble with bosses and authority. Recognition is slow, and confidence at work takes building.
+    tone: cautionary
+    weight: 0.5
+    source: Karaka reading (BPHS, paraphrased)
+    group: car-sun
+    test: {lagna: Aries, Sun: Libra}
+
+  - id: CAR-SAT-STRONG
+    title: Saturn is strong
+    when: {planet: Saturn, dignity: strong}
+    effect: Discipline and staying power. Long careers in structured fields reward you.
+    tone: supportive
+    weight: 0.7
+    source: Karaka reading (BPHS, paraphrased)
+    group: car-sat
+    test: {lagna: Aries, Saturn: Libra}
+
+  - id: CAR-SAT-WEAK
+    title: Saturn is debilitated
+    when: {planet: Saturn, dignity: weak}
+    effect: Work is a struggle for patience. Progress is slow, effort goes unrewarded for long stretches, and you are tempted to quit.
+    tone: cautionary
+    weight: 0.5
+    source: Karaka reading (BPHS, paraphrased)
+    group: car-sat
+    test: {lagna: Aries, Saturn: Aries}
+
+  - id: CAR-MAR-STRONG
+    title: Mars is strong
+    when: {planet: Mars, dignity: strong}
+    effect: Drive and decisiveness. Technical, competitive or management roles suit you.
+    tone: supportive
+    weight: 0.5
+    source: Karaka reading (BPHS, paraphrased)
+    test: {lagna: Aries, Mars: Capricorn}
+
+  - id: CAR-MER-STRONG
+    title: Mercury is strong
+    when: {planet: Mercury, dignity: strong}
+    effect: Good with information, numbers and deals. Business, IT and communication roles suit you.
+    tone: supportive
+    weight: 0.5
+    source: Karaka reading (BPHS, paraphrased)
+    test: {lagna: Aries, Mercury: Virgo}
+
+  # ----------------------------------------------------------------- the running period
+  - id: CAR-DASHA-RULES-10
+    title: Your main period's planet rules the 10th house
+    when: {period: maha, rules: 10}
+    effect: Career is at the centre of this period. Responsibility and recognition come now.
+    tone: supportive
+    weight: 0.8
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: car-period-maha
+    test: {lagna: Aries, period: {maha: Saturn}}
+
+  - id: CAR-DASHA-IN-10
+    title: Your main period's planet sits in the 10th house
+    when: {period: maha, house: 10}
+    effect: Work is the main theme of this period. Your career moves forward now.
+    tone: supportive
+    weight: 0.7
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: car-period-maha
+    test: {lagna: Aries, period: {maha: Mercury}}
+
+  - id: CAR-DASHA-GAINS
+    title: Your main period's planet rules gains
+    when: {period: maha, rules: [2, 11]}
+    effect: Work brings steady returns in this period.
+    tone: supportive
+    weight: 0.5
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: car-period-maha
+    test: {lagna: Aries, period: {maha: Venus}}
+
+  - id: CAR-DASHA-TURNS
+    title: Your main period's planet rules the 8th or 12th house
+    when:
+      all:
+        - {period: maha, rules: [8, 12]}
+        - {not: {period: maha, rules: [1, 2, 4, 5, 9, 10, 11]}}
+    effect: An unsettled period for career. Job changes, breaks or moves are likely.
+    tone: cautionary
+    weight: 0.4
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: car-period-maha
+    test: {lagna: Taurus, period: {maha: Mars}}
+
+  - id: CAR-DASHA-QUIET
+    title: Your main period and career
+    when: {period: maha}
+    effect: Your current period isn't tied to career, for better or worse.
+    tone: neutral
+    weight: 0.1
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: car-period-maha
+    test: {lagna: Aries, period: {maha: Moon}}
+
+  - id: CAR-DASHA-ANTAR-10
+    title: Your sub-period's planet rules or sits in the 10th house
+    when:
+      any:
+        - {period: antar, rules: 10}
+        - {period: antar, house: 10}
+    effect: The current sub-period brings work to the front.
+    tone: supportive
+    weight: 0.5
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: car-period-antar
+    test: {lagna: Aries, period: {maha: Moon, antar: Saturn}}

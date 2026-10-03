@@ -1,0 +1,509 @@
+# Plain-language explanations shown when someone taps a planet, sign or house.
+#
+# Writing rules (see PRODUCT.md): describe what tradition associates with a term, in soft,
+# tendency-based language. No fear, no predictions of illness, death, accidents or money.
+# `short` is one line; `body` is two or three plain sentences a first-timer can follow.
+
+# ---------------------------------------------------------------- planets (grahas)
+- id: planet.sun
+  kind: planet
+  term: Sun
+  transliteration: Surya
+  sanskrit: सूर्य
+  short: Self, vitality, authority and the father.
+  body: >
+    The Sun stands for your core sense of self: confidence, purpose and how you take
+    charge. Tradition also links it with the father, mentors and people in authority.
+    Where it sits shows where you want to shine.
+
+- id: planet.moon
+  kind: planet
+  term: Moon
+  transliteration: Chandra
+  sanskrit: चन्द्र
+  short: Mind, feelings, comfort and the mother.
+  body: >
+    The Moon is the mind: moods, memory and what makes you feel at home. It is also linked
+    with the mother and with nurture. Its sign, your Rashi, is so central in Jyotish that
+    many readings start from it.
+
+- id: planet.mars
+  kind: planet
+  term: Mars
+  transliteration: Mangala
+  sanskrit: मङ्गल
+  short: Energy, courage, drive and siblings.
+  body: >
+    Mars is your drive: courage, competitiveness and the will to act. Tradition connects
+    it with siblings, sport, engineering and property. Where it sits is where you push hardest.
+
+- id: planet.mercury
+  kind: planet
+  term: Mercury
+  transliteration: Budha
+  sanskrit: बुध
+  short: Thinking, speech, learning and trade.
+  body: >
+    Mercury rules the quick, analytical mind: speaking, writing, numbers and humour. It is
+    linked with study, commerce and adaptability. Its placement shows how you take in and
+    share information.
+
+- id: planet.jupiter
+  kind: planet
+  term: Jupiter
+  transliteration: Guru
+  sanskrit: गुरु
+  short: Wisdom, teachers, growth and good fortune.
+  body: >
+    Jupiter is the teacher: knowledge, ethics, optimism and expansion. Tradition treats it
+    as the most generous planet and links it with mentors, higher learning and children.
+    Where it sits tends to grow.
+
+- id: planet.venus
+  kind: planet
+  term: Venus
+  transliteration: Shukra
+  sanskrit: शुक्र
+  short: Love, beauty, art and comfort.
+  body: >
+    Venus stands for attraction and enjoyment: relationships, art, music, style and the
+    good things in life. It is also linked with partnership and diplomacy. Its placement
+    shows what you find beautiful and how you relate.
+
+- id: planet.saturn
+  kind: planet
+  term: Saturn
+  transliteration: Shani
+  sanskrit: शनि
+  short: Discipline, patience, work and time.
+  body: >
+    Saturn is the slow teacher: responsibility, structure, endurance and steady effort.
+    Tradition links it with hard work, service and lessons that pay off over time. Where
+    it sits is where results come with patience.
+
+- id: planet.rahu
+  kind: planet
+  term: Rahu
+  transliteration: Rahu
+  sanskrit: राहु
+  short: Ambition, the unfamiliar and strong desire.
+  body: >
+    Rahu is not a physical planet but the Moon's north node, a point where eclipses happen.
+    It stands for hunger for experience: ambition, innovation, foreign things and breaking
+    convention. Its placement shows where you want more.
+
+- id: planet.ketu
+  kind: planet
+  term: Ketu
+  transliteration: Ketu
+  sanskrit: केतु
+  short: Detachment, intuition and past mastery.
+  body: >
+    Ketu is the Moon's south node, always exactly opposite Rahu. It stands for letting go:
+    intuition, spirituality and skills that come so naturally you may undervalue them. Its
+    placement shows where you feel less attached.
+
+# ---------------------------------------------------------------- signs (rashis)
+- id: sign.aries
+  kind: sign
+  term: Aries
+  transliteration: Mesha
+  sanskrit: मेष
+  short: Fire, movable, ruled by Mars.
+  body: >
+    The first sign: direct, energetic and quick to start. Planets here tend to act boldly
+    and independently. The Sun is exalted here and Saturn is debilitated.
+
+- id: sign.taurus
+  kind: sign
+  term: Taurus
+  transliteration: Vrishabha
+  sanskrit: वृषभ
+  short: Earth, fixed, ruled by Venus.
+  body: >
+    Steady, practical and comfort-loving. Planets here tend to build slowly and hold on to
+    what they value. The Moon is exalted here.
+
+- id: sign.gemini
+  kind: sign
+  term: Gemini
+  transliteration: Mithuna
+  sanskrit: मिथुन
+  short: Air, dual, ruled by Mercury.
+  body: >
+    Curious, talkative and versatile. Planets here express themselves through ideas,
+    conversation and variety.
+
+- id: sign.cancer
+  kind: sign
+  term: Cancer
+  transliteration: Karka
+  sanskrit: कर्क
+  short: Water, movable, ruled by the Moon.
+  body: >
+    Caring, protective and emotionally tuned in. Planets here work through feeling and
+    belonging. Jupiter is exalted here and Mars is debilitated.
+
+- id: sign.leo
+  kind: sign
+  term: Leo
+  transliteration: Simha
+  sanskrit: सिंह
+  short: Fire, fixed, ruled by the Sun.
+  body: >
+    Warm, proud and generous. Planets here want to lead, create and be seen.
+
+- id: sign.virgo
+  kind: sign
+  term: Virgo
+  transliteration: Kanya
+  sanskrit: कन्या
+  short: Earth, dual, ruled by Mercury.
+  body: >
+    Precise, helpful and analytical. Planets here work through detail, skill and service.
+    Mercury is exalted here and Venus is debilitated.
+
+- id: sign.libra
+  kind: sign
+  term: Libra
+  transliteration: Tula
+  sanskrit: तुला
+  short: Air, movable, ruled by Venus.
+  body: >
+    Balanced, social and fair-minded. Planets here look for harmony and partnership.
+    Saturn is exalted here and the Sun is debilitated.
+
+- id: sign.scorpio
+  kind: sign
+  term: Scorpio
+  transliteration: Vrishchika
+  sanskrit: वृश्चिक
+  short: Water, fixed, ruled by Mars.
+  body: >
+    Intense, private and determined. Planets here go deep and hold on tightly. The Moon is
+    debilitated here.
+
+- id: sign.sagittarius
+  kind: sign
+  term: Sagittarius
+  transliteration: Dhanu
+  sanskrit: धनु
+  short: Fire, dual, ruled by Jupiter.
+  body: >
+    Optimistic, principled and exploring. Planets here look for meaning, learning and
+    wider horizons.
+
+- id: sign.capricorn
+  kind: sign
+  term: Capricorn
+  transliteration: Makara
+  sanskrit: मकर
+  short: Earth, movable, ruled by Saturn.
+  body: >
+    Ambitious, practical and patient. Planets here work towards long-term goals. Mars is
+    exalted here and Jupiter is debilitated.
+
+- id: sign.aquarius
+  kind: sign
+  term: Aquarius
+  transliteration: Kumbha
+  sanskrit: कुम्भ
+  short: Air, fixed, ruled by Saturn.
+  body: >
+    Independent, idealistic and community-minded. Planets here think about systems,
+    groups and the bigger picture.
+
+- id: sign.pisces
+  kind: sign
+  term: Pisces
+  transliteration: Meena
+  sanskrit: मीन
+  short: Water, dual, ruled by Jupiter.
+  body: >
+    Imaginative, compassionate and intuitive. Planets here work through empathy and
+    inspiration. Venus is exalted here and Mercury is debilitated.
+
+# ---------------------------------------------------------------- houses (bhavas)
+- id: house.1
+  kind: house
+  term: 1st house
+  transliteration: Tanu bhava
+  sanskrit: तनु भाव
+  short: "You: body, temperament and first impressions."
+  body: >
+    The house of the self, starting from the Lagna. It describes your personality, health
+    and how you meet the world. Every other house is counted from here.
+
+- id: house.2
+  kind: house
+  term: 2nd house
+  transliteration: Dhana bhava
+  sanskrit: धन भाव
+  short: Family, speech, food and savings.
+  body: >
+    The house of what you keep: family values, the way you speak, eating habits and
+    resources you build up.
+
+- id: house.3
+  kind: house
+  term: 3rd house
+  transliteration: Sahaja bhava
+  sanskrit: सहज भाव
+  short: Courage, siblings, skills and communication.
+  body: >
+    The house of effort: initiative, younger siblings, hobbies, writing and short trips.
+    It shows how you put yourself forward.
+
+- id: house.4
+  kind: house
+  term: 4th house
+  transliteration: Sukha bhava
+  sanskrit: सुख भाव
+  short: Home, mother, comfort and inner peace.
+  body: >
+    The house of happiness at the root: home, the mother, early education, vehicles and
+    the feeling of being settled.
+
+- id: house.5
+  kind: house
+  term: 5th house
+  transliteration: Putra bhava
+  sanskrit: पुत्र भाव
+  short: Creativity, learning, romance and children.
+  body: >
+    The house of what you create: intelligence, study, play, romance and children. It is
+    also linked with merit carried from the past.
+
+- id: house.6
+  kind: house
+  term: 6th house
+  transliteration: Ripu bhava
+  sanskrit: रिपु भाव
+  short: Daily work, routines, service and overcoming obstacles.
+  body: >
+    The house of effort against resistance: competition, problem-solving, everyday work and
+    health habits. Planets here often help you outwork difficulties.
+
+- id: house.7
+  kind: house
+  term: 7th house
+  transliteration: Kalatra bhava
+  sanskrit: कलत्र भाव
+  short: Partnership, marriage and close collaborators.
+  body: >
+    The house opposite the self: spouse, business partners and anyone you meet one to one.
+    It shows what you look for in others.
+
+- id: house.8
+  kind: house
+  term: 8th house
+  transliteration: Ayu bhava
+  sanskrit: आयु भाव
+  short: Change, research, shared resources and the hidden.
+  body: >
+    The house of what lies beneath the surface: transformation, investigation, inheritance
+    and other people's resources. It is linked with depth and resilience.
+
+- id: house.9
+  kind: house
+  term: 9th house
+  transliteration: Dharma bhava
+  sanskrit: धर्म भाव
+  short: Fortune, teachers, beliefs and long journeys.
+  body: >
+    The house of dharma: higher learning, philosophy, the father and guides, long-distance
+    travel and good fortune.
+
+- id: house.10
+  kind: house
+  term: 10th house
+  transliteration: Karma bhava
+  sanskrit: कर्म भाव
+  short: Career, public role and reputation.
+  body: >
+    The house of action in the world: profession, achievements, status and how others see
+    your work. It sits at the top of the chart.
+
+- id: house.11
+  kind: house
+  term: 11th house
+  transliteration: Labha bhava
+  sanskrit: लाभ भाव
+  short: Gains, friends, networks and ambitions.
+  body: >
+    The house of gains: income, elder siblings, friendships, communities and the goals you
+    reach for. Most planets are thought to do well here.
+
+- id: house.12
+  kind: house
+  term: 12th house
+  transliteration: Vyaya bhava
+  sanskrit: व्यय भाव
+  short: Rest, spending, foreign lands and letting go.
+  body: >
+    The house of release: sleep, retreat, expenses, charity, life abroad and spiritual
+    practice. It is where energy is spent rather than stored.
+
+# ---------------------------------------------------------------- dignities
+- id: dignity.exalted
+  kind: dignity
+  term: Exalted
+  transliteration: Uchcha
+  sanskrit: उच्च
+  short: The sign where a planet is at its strongest.
+  body: >
+    Each planet has one sign where tradition says it works at its best. An exalted planet
+    tends to deliver its qualities clearly and generously.
+
+- id: dignity.moolatrikona
+  kind: dignity
+  term: Moolatrikona
+  transliteration: Moolatrikona
+  sanskrit: मूलत्रिकोण
+  short: 'A planet''s "office": strong and purposeful.'
+  body: >
+    A special stretch of degrees, usually in a sign the planet rules, where it acts with
+    confidence and focus. It ranks just below exaltation.
+
+- id: dignity.own
+  kind: dignity
+  term: Own sign
+  transliteration: Swakshetra
+  sanskrit: स्वक्षेत्र
+  short: "A planet in a sign it rules: at home."
+  body: >
+    A planet in its own sign is comfortable and self-reliant, able to express itself
+    without help.
+
+- id: dignity.friendly
+  kind: dignity
+  term: Friendly sign
+  transliteration: Mitra rashi
+  sanskrit: मित्र राशि
+  short: A sign ruled by a planet's friend.
+  body: >
+    The planet is a guest of a friend: generally supported and at ease.
+
+- id: dignity.neutral
+  kind: dignity
+  term: Neutral sign
+  transliteration: Sama rashi
+  sanskrit: सम राशि
+  short: Neither helped nor hindered by the sign.
+  body: >
+    The planet works on its own terms here; other factors in the chart matter more.
+
+- id: dignity.enemy
+  kind: dignity
+  term: Enemy sign
+  transliteration: Shatru rashi
+  sanskrit: शत्रु राशि
+  short: A sign ruled by a planet's rival.
+  body: >
+    The planet is a guest of a rival, so it may need more effort to express itself
+    comfortably. It is one factor among many, not a verdict.
+
+- id: dignity.debilitated
+  kind: dignity
+  term: Debilitated
+  transliteration: Neecha
+  sanskrit: नीच
+  short: The sign opposite exaltation, where a planet is weakest.
+  body: >
+    Tradition says a planet here has to work harder to show its best side. It often points
+    to an area that grows through conscious effort, and other placements can offset it.
+
+# ---------------------------------------------------------------- states
+- id: state.retrograde
+  kind: state
+  term: Retrograde
+  transliteration: Vakri
+  sanskrit: वक्री
+  short: Appears to move backwards from Earth.
+  body: >
+    Seen from Earth, planets sometimes seem to reverse for a while. Tradition reads a
+    retrograde planet as turned inward: revisiting, reflecting and working in its own way.
+    Rahu and Ketu always move this way, so it isn't marked for them.
+
+- id: state.combust
+  kind: state
+  term: Combust
+  transliteration: Asta
+  sanskrit: अस्त
+  short: Too close to the Sun to be seen.
+  body: >
+    A planet very close to the Sun is hidden in its glare. Tradition says its themes can
+    merge into your sense of self rather than stand out on their own.
+
+# ---------------------------------------------------------------- concepts
+- id: concept.lagna
+  kind: concept
+  term: Lagna
+  transliteration: Lagna
+  sanskrit: लग्न
+  short: The sign rising in the east at your birth.
+  body: >
+    The Lagna, or ascendant, is the sign on the eastern horizon at the moment of birth. It
+    becomes your 1st house, and the other houses follow in order. It changes every two
+    hours or so, which is why the birth time matters.
+
+- id: concept.rashi
+  kind: concept
+  term: Rashi
+  transliteration: Rashi
+  sanskrit: राशि
+  short: Your Moon sign, and the Rashi chart (D1).
+  body: >
+    Rashi means sign. Your Rashi is the sign the Moon was in at birth. The Rashi chart, or
+    D1, is the main birth chart showing every planet's sign.
+
+- id: concept.nakshatra
+  kind: concept
+  term: Nakshatra
+  transliteration: Nakshatra
+  sanskrit: नक्षत्र
+  short: One of 27 lunar mansions of 13°20′ each.
+  body: >
+    The zodiac is also divided into 27 nakshatras. The Moon's nakshatra at birth sets the
+    order of your dasha periods. Each nakshatra is split into four quarters called padas.
+
+- id: concept.navamsa
+  kind: concept
+  term: Navamsa
+  transliteration: Navamsa
+  sanskrit: नवांश
+  short: "The D9 chart: each sign split into nine parts."
+  body: >
+    The Navamsa divides every sign into nine slices of 3°20′ and maps each slice to a sign.
+    Tradition uses it to see a planet's deeper strength and for marriage and partnership.
+    Its ascendant changes every 13 minutes or so, so it needs an accurate birth time.
+
+- id: concept.chandra_lagna
+  kind: concept
+  term: Houses from the Moon
+  transliteration: Chandra Lagna
+  sanskrit: चन्द्र लग्न
+  short: Counting houses from the Moon's sign.
+  body: >
+    When the birth time isn't known well enough to fix the Lagna, Jyotish counts houses
+    from the Moon's sign instead. It's a long-standing alternative view, not a guess.
+
+- id: concept.whole_sign
+  kind: concept
+  term: Whole-sign houses
+  transliteration: Rashi bhava
+  sanskrit: राशि भाव
+  short: Each house is one whole sign.
+  body: >
+    This app uses whole-sign houses, the oldest system: the Lagna's sign is the whole 1st
+    house, the next sign the 2nd, and so on.
+
+- id: concept.sign_boundary
+  kind: concept
+  term: Near a sign boundary
+  transliteration: Sandhi
+  sanskrit: सन्धि
+  short: Within a minute of arc of a neighbouring sign.
+  body: >
+    A planet this close to the edge of a sign can land on either side depending on small
+    differences between calculation methods. Treat its sign as uncertain and read both.

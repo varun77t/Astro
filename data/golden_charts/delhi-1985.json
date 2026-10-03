@@ -1,0 +1,78 @@
+{
+  "id": "delhi-1985",
+  "source": "Planets: Drik Panchang sidereal planetary positions (Lahiri/Chitrapaksha, mean node), fetched 2026-10-03. Ascendant: AstroSage cloud kundli (N.C. Lahiri) entered with exactly the coordinates and UTC offset below. Drik Panchang's ascendant is not used: it runs ahead by about longitude x 0.00274 deg of sidereal time (10-20' for Indian cities).",
+  "notes": "Ascendant 1 deg 22' into Cancer. Mercury retrograde, Jupiter debilitated.",
+  "birth": {
+    "date": "1985-11-23",
+    "time": "21:10:00",
+    "tz_name": "Asia/Kolkata",
+    "lat": 28.65,
+    "lon": 77.233333,
+    "expected_utc_offset": "+05:30",
+    "coordinates_dms": "28°39'N 77°14'E"
+  },
+  "tolerance_arcmin": 1.0,
+  "ascendant_tolerance_arcmin": 1.0,
+  "expected": {
+    "ascendant": "Cancer 1:22:06",
+    "planets": {
+      "Sun": "Scorpio 7:37:51.08",
+      "Moon": "Pisces 25:45:40.32",
+      "Mars": "Virgo 23:13:18.61",
+      "Mercury": "Scorpio 19:14:19.97",
+      "Jupiter": "Capricorn 17:30:55.54",
+      "Venus": "Libra 23:54:41.79",
+      "Saturn": "Scorpio 7:06:50.90",
+      "Rahu": "Aries 14:11:15.01",
+      "Ketu": "Libra 14:11:15.01"
+    },
+    "nakshatras": {
+      "Moon": [
+        "Revati",
+        3
+      ]
+    }
+  },
+  "dasha": {
+    "source": "AstroSage cloud kundli, Vimshottari, fetched 2026-10-03. Dates are end dates. Computed from AstroSage's own Moon below, so the test checks the dasha arithmetic, not the ephemeris.",
+    "reference_moon": "Pisces 25:46:07",
+    "mahadasha_ends": [
+      [
+        "Mercury",
+        "1991-04-15"
+      ],
+      [
+        "Ketu",
+        "1998-04-15"
+      ],
+      [
+        "Venus",
+        "2018-04-15"
+      ],
+      [
+        "Sun",
+        "2024-04-15"
+      ],
+      [
+        "Moon",
+        "2034-04-15"
+      ],
+      [
+        "Mars",
+        "2041-04-15"
+      ],
+      [
+        "Rahu",
+        "2059-04-15"
+      ],
+      [
+        "Jupiter",
+        "2075-04-15"
+      ],
+      [
+        "Saturn",
+        "2094-04-15"
+      ]
+    ]
+  }
+}

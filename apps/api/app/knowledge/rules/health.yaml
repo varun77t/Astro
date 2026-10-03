@@ -1,0 +1,328 @@
+# Health: vitality, stamina, recovery and the mind.
+#
+# Houses: 1st (body, vitality), 6th (resistance, daily habits), 12th (rest, sleep).
+# Karakas: Sun (vitality), Moon (mind), Mars (energy), Saturn (endurance).
+# Frank, but never name a specific illness, predict an accident or death, or suggest skipping
+# medical care. See docs/rule-writing-guide.md.
+
+area: health
+title: Health
+summary:
+  supportive: Your chart shows a strong constitution and good recovery.
+  mixed: Your chart shows a decent constitution with a few weak spots to look after.
+  cautionary: Health is a weak area in your chart. Lower stamina and slower recovery need looking after.
+  quiet: Nothing in your chart marks health out, for good or bad.
+disclaimer: Themes from tradition, not medical advice. See a doctor for anything that concerns you.
+
+rules:
+  # ------------------------------------------------------------ the 1st house and its lord
+  - id: HEA-1L-STRONG
+    title: Ruler of the 1st house is strong
+    when: {lord_of: 1, dignity: strong}
+    effect: A strong constitution. You bounce back well from setbacks.
+    tone: supportive
+    weight: 0.7
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: hea-1l-dignity
+    test: {lagna: Aries, Mars: Capricorn}
+
+  - id: HEA-1L-WEAK
+    title: Ruler of the 1st house is debilitated
+    when: {lord_of: 1, dignity: weak}
+    effect: A weaker constitution. Energy runs low when you overdo things, and recovery is slower than for most.
+    tone: cautionary
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: hea-1l-dignity
+    test: {lagna: Aries, Mars: Cancer}
+
+  - id: HEA-1L-GOOD-HOUSE
+    title: Ruler of the 1st house in an angle or trine
+    when: {lord_of: 1, house: [kendra, trikona]}
+    effect: Good basic vitality, and a body that holds up well.
+    tone: supportive
+    weight: 0.5
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: hea-1l-place
+    test: {lagna: Aries, Mars: Leo}
+
+  - id: HEA-1L-DUSTHANA
+    title: Ruler of the 1st house in the 6th, 8th or 12th
+    when: {lord_of: 1, house: dusthana}
+    effect: Health needs more attention than average. Recurring health problems and low stamina are common with this placement.
+    tone: cautionary
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: hea-1l-place
+    test: {lagna: Aries, Mars: Virgo}
+
+  - id: HEA-1L-COMBUST
+    title: Ruler of the 1st house is combust
+    when:
+      all:
+        - {lord_of: 1, combust: true}
+        - {not: {lord_of: 1, is: Sun}}
+    effect: You burn yourself out. Overwork drains you faster than you notice.
+    tone: cautionary
+    weight: 0.4
+    source: Combustion (common teaching)
+    test: {lagna: Aries, Mars: Sagittarius 15}
+
+  - id: HEA-6L-1H
+    title: Ruler of the 6th house in the 1st
+    when: {lord_of: 6, house: 1}
+    effect: Health is a recurring theme in your life. Daily habits decide how you feel more than they do for most people.
+    tone: cautionary
+    weight: 0.5
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    test: {lagna: Aries, Mercury: Aries}
+
+  # ---------------------------------------------------------------- planets in the 1st
+  - id: HEA-1H-JUP
+    title: Jupiter in the 1st house
+    when: {planet: Jupiter, house: 1}
+    effect: Protective for health, with an optimism that helps you recover. Weight gain is the usual trade-off.
+    tone: supportive
+    weight: 0.7
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Jupiter: Aries}
+
+  - id: HEA-1H-BENEFIC
+    title: Venus or Mercury in the 1st house
+    when: {house: 1, has: [Venus, Mercury]}
+    effect: A pleasant, balanced constitution, and you look after yourself.
+    tone: supportive
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Venus: Aries}
+
+  - id: HEA-1H-SUN
+    title: The Sun in the 1st house
+    when: {planet: Sun, house: 1}
+    effect: Strong vitality and drive. You run hot and push too hard; heat and the eyes are traditional weak points.
+    tone: neutral
+    weight: 0.6
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Sun: Aries}
+
+  - id: HEA-1H-MAR
+    title: Mars in the 1st house
+    when: {planet: Mars, house: 1}
+    effect: Plenty of physical energy and a short fuse. You act fast and take physical risks; exercise is your outlet.
+    tone: neutral
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Mars: Aries}
+
+  - id: HEA-1H-SAT
+    title: Saturn in the 1st house
+    when: {planet: Saturn, house: 1}
+    effect: A lean, tense constitution. Stiffness, fatigue and slow recovery are classic with Saturn here; it improves with age.
+    tone: cautionary
+    weight: 0.6
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Saturn: Aries}
+
+  - id: HEA-1H-RAH
+    title: Rahu in the 1st house
+    when: {planet: Rahu, house: 1}
+    effect: Restless and hard to settle. Stress shows up in the body, and symptoms are hard to pin down.
+    tone: cautionary
+    weight: 0.4
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Rahu: Aries}
+
+  - id: HEA-1H-KET
+    title: Ketu in the 1st house
+    when: {planet: Ketu, house: 1}
+    effect: Sensitive and run on intuition. You need quiet time to reset, and you neglect your body when absorbed.
+    tone: neutral
+    weight: 0.4
+    source: Common Jyotish teaching
+    test: {lagna: Aries}
+
+  - id: HEA-1H-JUP-ASPECT
+    title: Jupiter aspects the 1st house
+    when: {house: 1, aspected_by: Jupiter}
+    effect: Jupiter's aspect protects your health and helps you recover.
+    tone: supportive
+    weight: 0.5
+    source: Graha drishti (BPHS, paraphrased)
+    test: {lagna: Aries, Jupiter: Leo}
+
+  - id: HEA-1H-SAT-ASPECT
+    title: Saturn aspects the 1st house
+    when: {house: 1, aspected_by: Saturn}
+    effect: Saturn weighs on the body. Tiredness and a slower pace are part of your constitution.
+    tone: cautionary
+    weight: 0.4
+    source: Graha drishti (BPHS, paraphrased)
+    test: {lagna: Aries, Saturn: Libra}
+
+  # ------------------------------------------------------- the 6th house: resistance
+  - id: HEA-6H-HARD
+    title: A hard planet in the 6th house
+    when: {house: 6, has: [Sun, Mars, Saturn, Rahu]}
+    effect: Good resistance. You fight things off and push through.
+    tone: supportive
+    weight: 0.6
+    source: Upachaya houses (BPHS, paraphrased)
+    test: {lagna: Aries, Mars: Virgo}
+
+  # ---------------------------------------------------------------- the 12th: rest
+  - id: HEA-12H-SAT
+    title: Saturn in the 12th house
+    when: {planet: Saturn, house: 12}
+    effect: Sleep is a weak point. Poor or broken sleep is common with this placement, and you need more rest than you get.
+    tone: cautionary
+    weight: 0.4
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Saturn: Pisces}
+
+  - id: HEA-12H-MOO
+    title: The Moon in the 12th house
+    when: {planet: Moon, house: 12}
+    effect: You recharge in quiet and solitude. Crowds and noise drain you.
+    tone: neutral
+    weight: 0.4
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Moon: Pisces}
+
+  # ------------------------------------------------------------------ the Sun: vitality
+  - id: HEA-SUN-STRONG
+    title: The Sun is strong
+    when: {planet: Sun, dignity: strong}
+    effect: Strong vitality and stamina.
+    tone: supportive
+    weight: 0.6
+    source: Karaka reading (BPHS, paraphrased)
+    group: hea-sun
+    test: {lagna: Aries, Sun: Aries}
+
+  - id: HEA-SUN-WEAK
+    title: The Sun is debilitated
+    when: {planet: Sun, dignity: weak}
+    effect: Low vitality. Energy dips easily, and you need routine, sunlight and rest more than most.
+    tone: cautionary
+    weight: 0.5
+    source: Karaka reading (BPHS, paraphrased)
+    group: hea-sun
+    test: {lagna: Aries, Sun: Libra}
+
+  # --------------------------------------------------------------- the Moon: the mind
+  - id: HEA-MOON-STRONG
+    title: The Moon is strong
+    when: {planet: Moon, dignity: strong}
+    effect: A steady mind that supports your wellbeing.
+    tone: supportive
+    weight: 0.5
+    source: Karaka reading (BPHS, paraphrased)
+    group: hea-moon
+    test: {lagna: Aries, Moon: Taurus}
+
+  - id: HEA-MOON-WEAK
+    title: The Moon is debilitated
+    when: {planet: Moon, dignity: weak}
+    effect: An anxious, easily shaken mind. Stress turns into tiredness and poor sleep.
+    tone: cautionary
+    weight: 0.5
+    source: Karaka reading (BPHS, paraphrased)
+    group: hea-moon
+    test: {lagna: Aries, Moon: Scorpio}
+
+  - id: HEA-MOON-SAT
+    title: The Moon with Saturn
+    when: {planet: Moon, with: Saturn}
+    effect: Low moods and worry that you keep to yourself. Talking things through helps more than you expect.
+    tone: cautionary
+    weight: 0.5
+    source: Common Jyotish teaching
+    group: hea-moon-hard
+    test: {lagna: Aries, Moon: Taurus}
+
+  - id: HEA-MOON-NODES
+    title: The Moon with Rahu or Ketu
+    when: {planet: Moon, with: [Rahu, Ketu]}
+    effect: A restless, sensitive mind. Anxiety and overthinking come in waves.
+    tone: cautionary
+    weight: 0.5
+    source: Grahana yoga (common teaching)
+    group: hea-moon-hard
+    test: {lagna: Aries, Moon: Libra}
+
+  # ----------------------------------------------------- Mars and Saturn: energy, endurance
+  - id: HEA-MAR-STRONG
+    title: Mars is strong
+    when: {planet: Mars, dignity: strong}
+    effect: Physical energy and stamina. Sport and exercise suit you.
+    tone: supportive
+    weight: 0.4
+    source: Karaka reading (BPHS, paraphrased)
+    group: hea-mar
+    test: {lagna: Aries, Mars: Capricorn}
+
+  - id: HEA-MAR-WEAK
+    title: Mars is debilitated
+    when: {planet: Mars, dignity: weak}
+    effect: Energy comes in bursts and crashes. Regular moderate exercise works better for you than extremes.
+    tone: cautionary
+    weight: 0.4
+    source: Karaka reading (BPHS, paraphrased)
+    group: hea-mar
+    test: {lagna: Aries, Mars: Cancer}
+
+  - id: HEA-SAT-STRONG
+    title: Saturn is strong
+    when: {planet: Saturn, dignity: strong}
+    effect: Endurance. You keep going steadily and age well.
+    tone: supportive
+    weight: 0.4
+    source: Karaka reading (BPHS, paraphrased)
+    test: {lagna: Aries, Saturn: Libra}
+
+  # ----------------------------------------------------------------- the running period
+  - id: HEA-DASHA-RULES-1
+    title: Your main period's planet rules the 1st house
+    when: {period: maha, rules: 1}
+    effect: Your own energy and wellbeing are in focus this period. Habits started now stick.
+    tone: supportive
+    weight: 0.5
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: hea-period-maha
+    test: {lagna: Aries, period: {maha: Mars}}
+
+  - id: HEA-DASHA-HARD
+    title: Your main period's planet rules the 6th, 8th or 12th house
+    when:
+      all:
+        - {period: maha, rules: [6, 8, 12]}
+        - {not: {period: maha, rules: 1}}
+    effect: A period that is harder on your health. Stamina is lower, and you need to build in rest.
+    tone: cautionary
+    weight: 0.5
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: hea-period-maha
+    test: {lagna: Aries, period: {maha: Mercury}}
+
+  - id: HEA-DASHA-QUIET
+    title: Your main period and health
+    when: {period: maha}
+    effect: Your current period isn't tied to health, for better or worse.
+    tone: neutral
+    weight: 0.1
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: hea-period-maha
+    test: {lagna: Aries, period: {maha: Venus}}
+
+  - id: HEA-DASHA-ANTAR-HARD
+    title: Your sub-period's planet rules the 6th, 8th or 12th house
+    when:
+      all:
+        - {period: antar, rules: [6, 8, 12]}
+        - {not: {period: antar, rules: 1}}
+    effect: The current sub-period drains energy. Look after sleep and routine.
+    tone: cautionary
+    weight: 0.4
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: hea-period-antar
+    test: {lagna: Aries, period: {maha: Venus, antar: Jupiter}}

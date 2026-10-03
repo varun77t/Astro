@@ -1,0 +1,399 @@
+# Relationships: partnership, love, family and friends.
+#
+# Houses: 7th (partner, marriage), 5th (romance), 4th (home), 2nd (family), 11th (friends).
+# Karakas: Venus (love), Moon (feelings), Mars (passion), Jupiter (commitment).
+# Write frankly; see docs/rule-writing-guide.md.
+
+area: relationships
+title: Relationships
+summary:
+  supportive: Your chart is good for relationships. Partnership comes naturally to you.
+  mixed: Your chart shows real warmth in relationships, and real friction.
+  cautionary: Relationships are a hard area in your chart. Delays, friction or disappointment are part of the story.
+  quiet: Nothing in your chart marks relationships out, for good or bad.
+
+rules:
+  # ------------------------------------------------------------ planets in the 7th house
+  - id: REL-7H-VEN
+    title: Venus in the 7th house
+    when: {planet: Venus, house: 7}
+    effect: Warmth and charm in partnership. You attract affectionate partners, and you expect a lot of romance.
+    tone: supportive
+    weight: 0.7
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Venus: Libra}
+
+  - id: REL-7H-JUP
+    title: Jupiter in the 7th house
+    when: {planet: Jupiter, house: 7}
+    effect: A partner you respect and learn from. Marriage brings growth, and a good one is likely.
+    tone: supportive
+    weight: 0.7
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Jupiter: Libra}
+
+  - id: REL-7H-MER
+    title: Mercury in the 7th house
+    when: {planet: Mercury, house: 7}
+    effect: You want a partner who is also a friend. Talk holds your relationships together.
+    tone: supportive
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Mercury: Libra}
+
+  - id: REL-7H-MOO
+    title: The Moon in the 7th house
+    when: {planet: Moon, house: 7}
+    effect: You need emotional closeness and care from a partner. Your moods and theirs rise and fall together.
+    tone: neutral
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Moon: Libra}
+
+  - id: REL-7H-SUN
+    title: The Sun in the 7th house
+    when: {planet: Sun, house: 7}
+    effect: Drawn to strong, proud partners, and ego clashes follow. Sharing the spotlight is the work.
+    tone: cautionary
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Sun: Libra}
+
+  - id: REL-7H-MAR
+    title: Mars in the 7th house
+    when: {planet: Mars, house: 7}
+    effect: Passion and conflict together. Arguments with a partner are frequent and heated.
+    tone: cautionary
+    weight: 0.6
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Mars: Libra}
+
+  - id: REL-7H-SAT
+    title: Saturn in the 7th house
+    when: {planet: Saturn, house: 7}
+    effect: Marriage comes late or with someone older or more serious. Relationships feel like duty at times, but they last.
+    tone: cautionary
+    weight: 0.6
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Saturn: Libra}
+
+  - id: REL-7H-RAH
+    title: Rahu in the 7th house
+    when: {planet: Rahu, house: 7}
+    effect: Drawn to people from a different background, culture or country. Relationships are unconventional and sometimes unstable.
+    tone: neutral
+    weight: 0.5
+    source: Common Jyotish teaching
+    test: {lagna: Aries}
+
+  - id: REL-7H-KET
+    title: Ketu in the 7th house
+    when: {planet: Ketu, house: 7}
+    effect: Detached in partnership. You or your partner pull away, and closeness never feels quite complete.
+    tone: cautionary
+    weight: 0.5
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Ketu: Libra}
+
+  - id: REL-7H-JUP-ASPECT
+    title: Jupiter aspects the 7th house
+    when: {house: 7, aspected_by: Jupiter}
+    effect: Jupiter protects your partnerships. Goodwill carries your relationships through rough patches.
+    tone: supportive
+    weight: 0.6
+    source: Graha drishti (BPHS, paraphrased)
+    test: {lagna: Aries, Jupiter: Gemini}
+
+  - id: REL-7H-SAT-ASPECT
+    title: Saturn aspects the 7th house
+    when: {house: 7, aspected_by: Saturn}
+    effect: Saturn delays commitment. Marriage comes later than you'd like.
+    tone: cautionary
+    weight: 0.4
+    source: Graha drishti (BPHS, paraphrased)
+    test: {lagna: Aries, Saturn: Aries}
+
+  - id: REL-MANGLIK
+    title: Mars in the 1st, 4th, 7th, 8th or 12th house
+    when: {planet: Mars, house: [1, 4, 7, 8, 12]}
+    effect: This is what's called Manglik. Tradition reads it as intensity and friction in marriage. It is common, and many charts cancel it.
+    tone: neutral
+    weight: 0.3
+    source: Kuja dosha (common teaching)
+    test: {lagna: Aries, Mars: Cancer}
+
+  # ------------------------------------------------------------------ the 7th house lord
+  - id: REL-7L-STRONG
+    title: Ruler of the 7th house is strong
+    when: {lord_of: 7, dignity: strong}
+    effect: A strong house of partnership. A capable partner and a stable marriage are likely.
+    tone: supportive
+    weight: 0.7
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: rel-7l-dignity
+    test: {lagna: Aries, Venus: Pisces}
+
+  - id: REL-7L-WEAK
+    title: Ruler of the 7th house is debilitated
+    when: {lord_of: 7, dignity: weak}
+    effect: Partnership is a weak point. Disappointment in relationships, or a partner who struggles, is a classic reading.
+    tone: cautionary
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: rel-7l-dignity
+    test: {lagna: Aries, Venus: Virgo}
+
+  - id: REL-7L-GOOD-HOUSE
+    title: Ruler of the 7th house in an angle or trine
+    when: {lord_of: 7, house: [1, 4, 5, 7, 9, 10]}
+    effect: Partnership fits easily into your life. Relationships tend to work.
+    tone: supportive
+    weight: 0.5
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: rel-7l-place
+    test: {lagna: Aries, Venus: Leo}
+
+  - id: REL-7L-DUSTHANA
+    title: Ruler of the 7th house in the 6th or 8th
+    when: {lord_of: 7, house: [6, 8]}
+    effect: Friction in partnership. Disputes, or a relationship that goes through a serious break, are part of the reading.
+    tone: cautionary
+    weight: 0.6
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: rel-7l-place
+    test: {lagna: Aries, Venus: Virgo}
+
+  - id: REL-7L-12H
+    title: Ruler of the 7th house in the 12th
+    when: {lord_of: 7, house: 12}
+    effect: A partner from far away or met through travel. Distance, physical or emotional, is a theme.
+    tone: neutral
+    weight: 0.4
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: rel-7l-place
+    test: {lagna: Aries, Venus: Pisces}
+
+  - id: REL-1L-7L
+    title: Rulers of the 1st and 7th houses together
+    when: {lord_of: 1, with_lord_of: 7}
+    effect: Close bonds come naturally. You see yourself through your partnerships.
+    tone: supportive
+    weight: 0.7
+    source: Parashari house-lord principle (BPHS, paraphrased)
+    group: rel-1-7
+    test: {lagna: Aries, Mars: Leo 10, Venus: Leo 20}
+
+  - id: REL-1-7-EXCHANGE
+    title: Rulers of the 1st and 7th houses exchange signs
+    when: {exchange: [1, 7]}
+    effect: You and a partner are deeply bound up with each other, for better and worse.
+    tone: supportive
+    weight: 0.7
+    source: Parivartana (BPHS, paraphrased)
+    group: rel-1-7
+    test: {lagna: Aries, Mars: Libra, Venus: Aries}
+
+  # ------------------------------------------------------------------- Venus: love
+  - id: REL-VEN-STRONG
+    title: Venus is strong
+    when: {planet: Venus, dignity: strong}
+    effect: Warmth, charm and a gift for affection. Love comes easily to you.
+    tone: supportive
+    weight: 0.6
+    source: Karaka reading (BPHS, paraphrased)
+    group: rel-ven
+    test: {lagna: Aries, Venus: Pisces}
+
+  - id: REL-VEN-WEAK
+    title: Venus is debilitated
+    when: {planet: Venus, dignity: weak}
+    effect: Venus, the planet of love, is weak. You are critical in love, and relationships disappoint more often than they should.
+    tone: cautionary
+    weight: 0.5
+    source: Karaka reading (BPHS, paraphrased)
+    group: rel-ven
+    test: {lagna: Aries, Venus: Virgo}
+
+  - id: REL-VEN-COMBUST
+    title: Venus is combust
+    when: {planet: Venus, combust: true}
+    effect: Your feelings are stronger than you show. Partners read you as cooler than you are.
+    tone: cautionary
+    weight: 0.3
+    source: Combustion (common teaching)
+    test: {lagna: Aries, Venus: Sagittarius 15}
+
+  - id: REL-VEN-MAR
+    title: Venus with Mars
+    when: {planet: Venus, with: Mars}
+    effect: Passionate and expressive in love. Attraction is strong and quick, and so are quarrels.
+    tone: neutral
+    weight: 0.4
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Venus: Gemini}
+
+  - id: REL-VEN-SAT
+    title: Venus with Saturn
+    when: {planet: Venus, with: Saturn}
+    effect: Loyal but slow to open up. Love comes late, and it lasts.
+    tone: neutral
+    weight: 0.4
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Venus: Taurus}
+
+  - id: REL-VEN-RAH
+    title: Venus with Rahu
+    when: {planet: Venus, with: Rahu}
+    effect: Drawn to the unusual or forbidden in love. Infatuation runs strong and doesn't always last.
+    tone: neutral
+    weight: 0.4
+    source: Common Jyotish teaching
+    test: {lagna: Aries, Venus: Libra}
+
+  - id: REL-5H-VEN
+    title: Venus in the 5th house
+    when: {planet: Venus, house: 5}
+    effect: Romance, flirtation and fun come easily, and love affairs are a feature of your life.
+    tone: supportive
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Venus: Leo}
+
+  - id: REL-D9-VEN
+    title: Venus is strong in the navamsa
+    when: {planet: Venus, d9_dignity: [exalted, own]}
+    effect: Your navamsa, the chart of marriage, strengthens Venus. Relationships improve with time.
+    tone: supportive
+    weight: 0.5
+    source: Navamsa reading (common teaching)
+    test: {lagna: Aries, Venus: Taurus 8}
+
+  # ----------------------------------------------------- the Moon: feelings, closeness
+  - id: REL-MOON-STRONG
+    title: The Moon is strong
+    when: {planet: Moon, dignity: strong}
+    effect: Emotional warmth that makes you easy to be close to.
+    tone: supportive
+    weight: 0.5
+    source: Karaka reading (BPHS, paraphrased)
+    group: rel-moon
+    test: {lagna: Aries, Moon: Taurus}
+
+  - id: REL-MOON-WEAK
+    title: The Moon is debilitated
+    when: {planet: Moon, dignity: weak}
+    effect: Emotionally guarded and quick to feel hurt. Trust takes you a long time.
+    tone: cautionary
+    weight: 0.5
+    source: Karaka reading (BPHS, paraphrased)
+    group: rel-moon
+    test: {lagna: Aries, Moon: Scorpio}
+
+  - id: REL-MOON-VEN
+    title: The Moon with Venus
+    when: {planet: Moon, with: Venus}
+    effect: Affectionate and caring. You put people at ease.
+    tone: supportive
+    weight: 0.5
+    source: Common Jyotish teaching
+    test: {lagna: Aries}
+
+  # ----------------------------------------------------- home, family and friends
+  - id: REL-4H-BENEFIC
+    title: A benefic in the 4th house
+    when: {house: 4, has: [Jupiter, Venus, Mercury]}
+    effect: A warm home and close family. Domestic happiness comes easily.
+    tone: supportive
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Jupiter: Cancer}
+
+  - id: REL-4H-HARD
+    title: Saturn, Rahu or Ketu in the 4th house
+    when: {house: 4, has: [Saturn, Rahu, Ketu]}
+    effect: Home life is unsettled or cold at times, and you find peace outside it more easily than in.
+    tone: cautionary
+    weight: 0.4
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Rahu: Cancer}
+
+  - id: REL-2H-BENEFIC
+    title: A benefic in the 2nd house
+    when: {house: 2, has: [Jupiter, Venus, Mercury]}
+    effect: Warm family ties, and you speak kindly.
+    tone: supportive
+    weight: 0.4
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries, Mercury: Taurus}
+
+  - id: REL-2H-HARD
+    title: Mars or Saturn in the 2nd house
+    when: {house: 2, has: [Mars, Saturn]}
+    effect: Harsh words and family friction. What you say lands harder than you mean it to.
+    tone: cautionary
+    weight: 0.4
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries}
+
+  - id: REL-11H-BENEFIC
+    title: A benefic in the 11th house
+    when: {house: 11, has: [Jupiter, Venus, Mercury]}
+    effect: A wide, friendly circle. Friends open doors for you.
+    tone: supportive
+    weight: 0.5
+    source: Parashari house reading (BPHS, paraphrased)
+    test: {lagna: Aries}
+
+  # ----------------------------------------------------------------- the running period
+  - id: REL-DASHA-RULES-7
+    title: Your main period's planet rules the 7th house
+    when: {period: maha, rules: 7}
+    effect: Partnership is in focus this period. Marriage or a serious relationship is likely to feature.
+    tone: supportive
+    weight: 0.7
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: rel-period-maha
+    test: {lagna: Aries, period: {maha: Venus}}
+
+  - id: REL-DASHA-IN-7
+    title: Your main period's planet sits in the 7th house
+    when: {period: maha, house: 7}
+    effect: Relationships are a main theme of this period.
+    tone: supportive
+    weight: 0.5
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: rel-period-maha
+    test: {lagna: Aries, period: {maha: Rahu}}
+
+  - id: REL-DASHA-VENUS
+    title: A Venus main period
+    when: {period: maha, is: Venus}
+    effect: Venus's period favours love, friendship and pleasure.
+    tone: supportive
+    weight: 0.5
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: rel-period-maha
+    test: {lagna: Taurus, period: {maha: Venus}}
+
+  - id: REL-DASHA-QUIET
+    title: Your main period and relationships
+    when: {period: maha}
+    effect: Your current period isn't tied to relationships, for better or worse.
+    tone: neutral
+    weight: 0.1
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: rel-period-maha
+    test: {lagna: Aries, period: {maha: Sun}}
+
+  - id: REL-DASHA-ANTAR-7
+    title: Your sub-period's planet rules or sits in the 7th house
+    when:
+      any:
+        - {period: antar, rules: 7}
+        - {period: antar, house: 7}
+    effect: The current sub-period brings a partner or partnership into focus.
+    tone: supportive
+    weight: 0.5
+    source: Vimshottari dasha reading (BPHS, paraphrased)
+    group: rel-period-antar
+    test: {lagna: Aries, period: {maha: Sun, antar: Venus}}

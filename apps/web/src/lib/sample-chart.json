@@ -1,0 +1,207 @@
+{
+ "reliability": {
+  "time_accuracy": "exact",
+  "window_minutes": 5,
+  "ascendant_signs": [
+   "Pisces"
+  ],
+  "moon_signs": [
+   "Sagittarius"
+  ],
+  "moon_nakshatras": [
+   "Uttara Ashadha"
+  ],
+  "ascendant_reliable": true,
+  "moon_sign_reliable": true,
+  "moon_nakshatra_reliable": true,
+  "navamsa_ascendant_signs": [
+   "Virgo",
+   "Libra"
+  ],
+  "navamsa_moon_signs": [
+   "Sagittarius"
+  ],
+  "navamsa_ascendant_reliable": false,
+  "navamsa_moon_reliable": true,
+  "basis": "ascendant",
+  "warnings": []
+ },
+ "ascendant": {
+  "longitude": 341.48086611098915,
+  "sign": "Pisces",
+  "sign_lord": "Jupiter",
+  "degree_in_sign": 11.480866110989155,
+  "nakshatra": "Uttara Bhadrapada",
+  "nakshatra_lord": "Saturn",
+  "pada": 3
+ },
+ "divisional": {
+  "D9": {
+   "ascendant_sign": "Libra",
+   "planets": [
+    {
+     "name": "Sun",
+     "sign": "Taurus",
+     "house": 8
+    },
+    {
+     "name": "Moon",
+     "sign": "Sagittarius",
+     "house": 3
+    },
+    {
+     "name": "Mars",
+     "sign": "Cancer",
+     "house": 10
+    },
+    {
+     "name": "Mercury",
+     "sign": "Libra",
+     "house": 1
+    },
+    {
+     "name": "Jupiter",
+     "sign": "Capricorn",
+     "house": 4
+    },
+    {
+     "name": "Venus",
+     "sign": "Virgo",
+     "house": 12
+    },
+    {
+     "name": "Saturn",
+     "sign": "Taurus",
+     "house": 8
+    },
+    {
+     "name": "Rahu",
+     "sign": "Virgo",
+     "house": 12
+    },
+    {
+     "name": "Ketu",
+     "sign": "Pisces",
+     "house": 6
+    }
+   ]
+  }
+ },
+ "meta": {
+  "utc": "2002-03-09T02:15:00Z",
+  "utc_offset": "+05:30",
+  "tz_name": "Asia/Kolkata",
+  "engine_version": "0.1.0",
+  "ayanamsa_value": 23.883107290114108
+ },
+ "planets": [
+  {
+   "name": "Sun",
+   "sign": "Aquarius",
+   "degree_in_sign": 24.44403289155389,
+   "house": 12,
+   "house_from_moon": 3,
+   "nakshatra": "Purva Bhadrapada",
+   "pada": 2,
+   "retrograde": false,
+   "combust": false,
+   "dignity": "enemy"
+  },
+  {
+   "name": "Moon",
+   "sign": "Sagittarius",
+   "degree_in_sign": 29.677184282717576,
+   "house": 10,
+   "house_from_moon": 1,
+   "nakshatra": "Uttara Ashadha",
+   "pada": 1,
+   "retrograde": false,
+   "combust": false,
+   "dignity": "neutral"
+  },
+  {
+   "name": "Mars",
+   "sign": "Aries",
+   "degree_in_sign": 11.39282157047507,
+   "house": 2,
+   "house_from_moon": 5,
+   "nakshatra": "Ashwini",
+   "pada": 4,
+   "retrograde": false,
+   "combust": false,
+   "dignity": "moolatrikona"
+  },
+  {
+   "name": "Mercury",
+   "sign": "Aquarius",
+   "degree_in_sign": 1.8172453307088858,
+   "house": 12,
+   "house_from_moon": 3,
+   "nakshatra": "Dhanishta",
+   "pada": 3,
+   "retrograde": false,
+   "combust": false,
+   "dignity": "neutral"
+  },
+  {
+   "name": "Jupiter",
+   "sign": "Gemini",
+   "degree_in_sign": 11.831832074982017,
+   "house": 4,
+   "house_from_moon": 7,
+   "nakshatra": "Ardra",
+   "pada": 2,
+   "retrograde": false,
+   "combust": false,
+   "dignity": "enemy"
+  },
+  {
+   "name": "Venus",
+   "sign": "Pisces",
+   "degree_in_sign": 7.390418529896749,
+   "house": 1,
+   "house_from_moon": 4,
+   "nakshatra": "Uttara Bhadrapada",
+   "pada": 2,
+   "retrograde": false,
+   "combust": false,
+   "dignity": "exalted"
+  },
+  {
+   "name": "Saturn",
+   "sign": "Taurus",
+   "degree_in_sign": 14.929545966632631,
+   "house": 3,
+   "house_from_moon": 6,
+   "nakshatra": "Rohini",
+   "pada": 2,
+   "retrograde": false,
+   "combust": false,
+   "dignity": "friendly"
+  },
+  {
+   "name": "Rahu",
+   "sign": "Taurus",
+   "degree_in_sign": 28.921327288481045,
+   "house": 3,
+   "house_from_moon": 6,
+   "nakshatra": "Mrigashira",
+   "pada": 2,
+   "retrograde": true,
+   "combust": false,
+   "dignity": "exalted"
+  },
+  {
+   "name": "Ketu",
+   "sign": "Scorpio",
+   "degree_in_sign": 28.921327288481052,
+   "house": 9,
+   "house_from_moon": 12,
+   "nakshatra": "Jyeshtha",
+   "pada": 4,
+   "retrograde": true,
+   "combust": false,
+   "dignity": "exalted"
+  }
+ ]
+}

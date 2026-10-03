@@ -1,0 +1,78 @@
+{
+  "id": "sydney-2000",
+  "source": "Planets: Drik Panchang sidereal planetary positions (Lahiri/Chitrapaksha, mean node), fetched 2026-10-03. Ascendant: AstroSage cloud kundli (N.C. Lahiri) entered with exactly the coordinates and UTC offset below. Drik Panchang's ascendant is not used: it runs ahead by about longitude x 0.00274 deg of sidereal time (10-20' for Indian cities).",
+  "notes": "Southern hemisphere in summer time (AEDT). Venus sits on the Scorpio/Sagittarius line: Drik says Scorpio 29 deg 59' 26\", AstroSage says Sagittarius 0 deg 00' 45\". Only the longitude is checked.",
+  "birth": {
+    "date": "2000-01-20",
+    "time": "06:30:00",
+    "tz_name": "Australia/Sydney",
+    "lat": -33.866667,
+    "lon": 151.2,
+    "expected_utc_offset": "+11:00",
+    "coordinates_dms": "33°52'S 151°12'E"
+  },
+  "tolerance_arcmin": 1.0,
+  "ascendant_tolerance_arcmin": 1.0,
+  "expected": {
+    "ascendant": "Capricorn 9:40:50",
+    "planets": {
+      "Sun": "Capricorn 5:09:54.93",
+      "Moon": "Gemini 15:49:53.95",
+      "Mars": "Aquarius 18:17:13.58",
+      "Mercury": "Capricorn 7:37:14.57",
+      "Jupiter": "Aries 2:40:41.48",
+      "Venus": "Scorpio 29:59:26.08",
+      "Saturn": "Aries 16:28:42.91",
+      "Rahu": "Cancer 10:12:37.04",
+      "Ketu": "Capricorn 10:12:37.04"
+    },
+    "nakshatras": {
+      "Moon": [
+        "Ardra",
+        3
+      ]
+    }
+  },
+  "dasha": {
+    "source": "AstroSage cloud kundli, Vimshottari, fetched 2026-10-03. Dates are end dates. Computed from AstroSage's own Moon below, so the test checks the dasha arithmetic, not the ephemeris.",
+    "reference_moon": "Gemini 15:50:16",
+    "mahadasha_ends": [
+      [
+        "Rahu",
+        "2005-09-02"
+      ],
+      [
+        "Jupiter",
+        "2021-09-02"
+      ],
+      [
+        "Saturn",
+        "2040-09-02"
+      ],
+      [
+        "Mercury",
+        "2057-09-02"
+      ],
+      [
+        "Ketu",
+        "2064-09-02"
+      ],
+      [
+        "Venus",
+        "2084-09-02"
+      ],
+      [
+        "Sun",
+        "2090-09-02"
+      ],
+      [
+        "Moon",
+        "2100-09-02"
+      ],
+      [
+        "Mars",
+        "2107-09-02"
+      ]
+    ]
+  }
+}

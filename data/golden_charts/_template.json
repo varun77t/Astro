@@ -1,0 +1,31 @@
+{
+  "id": "example-bangalore-1990",
+  "source": "Jagannatha Hora 8.0 (Lahiri, mean node). Copy values by hand; never from this app.",
+  "notes": "Why this chart is useful, e.g. 'birth during 1943 wartime +06:30' or 'Moon at 29°50' Aries'.",
+  "birth": {
+    "date": "1990-05-17",
+    "time": "14:35:00",
+    "tz_name": "Asia/Kolkata",
+    "lat": 12.9716,
+    "lon": 77.5946
+  },
+  "tolerance_arcmin": 1.0,
+  "ascendant_tolerance_arcmin": 1.0,
+  "expected": {
+    "ascendant": "Leo 0:00:00",
+    "planets": {
+      "Sun": "Taurus 0:00:00",
+      "Moon": "0 Ar 00' 00.00\"",
+      "Mars": "Aries 0:00:00",
+      "Mercury": "Aries 0:00:00",
+      "Jupiter": "Aries 0:00:00",
+      "Venus": "Aries 0:00:00",
+      "Saturn": "Aries 0:00:00",
+      "Rahu": "Aries 0:00:00",
+      "Ketu": "Libra 0:00:00"
+    },
+    "nakshatras": {
+      "Moon": ["Ashwini", 1]
+    }
+  }
+}
